@@ -9,13 +9,19 @@
                 </Property>
                 <Property Name="CreateDat" Type="Edm.Date" sap:label="Creation Date">
                 </Property>
-                <Property Name="RecPlant" Type="Edm.String" Nullable="false" sap:label="Receiving Plant">
+                <Property Name="RecPlantID" Type="Edm.String" MaxLength="4" sap:label="Receiving Plant ID">
                 </Property>
-                <Property Name="DelPlant" Type="Edm.String" Nullable="false" sap:label="Delivering Plant">
+                <Property Name="RecPlantDesc" Type="Edm.String" MaxLength="40" sap:label="Receiving Plant Description">
+                </Property>
+                <Property Name="DelPlantID" Type="Edm.String" MaxLength="4" sap:label="Delivering Plant ID">
+                </Property>
+                 <Property Name="DelPlantDesc" Type="Edm.String" MaxLength="40" sap:label="Delivering Plant Description">
                 </Property>
                 <Property Name="Status" Type="Edm.String" Nullable="false" sap:label="Status ">
                 </Property>
                 <NavigationProperty Name="OrderItem" Relationship="ProjectModel.Order_OrderItems" FromRole="Order" ToRole="OrderItem" />
+                <NavigationProperty Name="RecPlant" Relationship="ProjectModel.Order_RecPlants" FromRole="Order" ToRole="RecPlant" />
+                <NavigationProperty Name="DelPlant" Relationship="ProjectModel.Order_DelPlants" FromRole="Order" ToRole="DelPlant" />
             </EntityType>
             
             <EntityType Name="OrderItem">
@@ -33,6 +39,28 @@
                 </Property>
                 <NavigationProperty Name="Order" Relationship="ProjectModel.Order_OrderItems" FromRole="OrderItem" ToRole="Order" />
             </EntityType>
+
+            <EntityType Name="RecPlant">
+                <Key>
+                    <PropertyRef  Name="RecPlantID"/>
+                </Key>
+                <Property Name="RecPlantID" Type="Edm.String" MaxLength="4" sap:label="Receiving Plant ID">
+                </Property>
+                <Property Name="RecPlantDesc" Type="Edm.String" MaxLength="40" sap:label="Receiving Plant Description">
+                </Property>
+                <NavigationProperty Name="Order" Relationship="ProjectModel.Order_RecPlants" FromRole="RecPlant" ToRole="Order" />
+            </EntityType>
+
+            <EntityType Name="DelPlant">
+                <Key>
+                    <PropertyRef  Name="DelPlantID"/>
+                </Key>
+                <Property Name="DelPlantID" Type="Edm.String" MaxLength="4" sap:label="Delivering Plant ID">
+                </Property>
+                <Property Name="DelPlantDesc" Type="Edm.String" MaxLength="40" sap:label="Delivering Plant Description">
+                </Property>
+                <NavigationProperty Name="Order" Relationship="ProjectModel.Order_DelPlants" FromRole="DelPlant" ToRole="Order" />
+            </EntityType>
             
             <Association Name="Order_OrderItems">
                 <End Role="Order" Type="ProjectModel.Order" Multiplicity="1" />
@@ -46,15 +74,51 @@
                     </Dependent>
                 </ReferentialConstraint>
             </Association>
+
+            <Association Name="Order_RecPlants">
+                <End Role="RecPlant" Type="ProjectModel.RecPlant" Multiplicity="0..1" />
+                <End Role="Order" Type="ProjectModel.Order" Multiplicity="*" />
+                <ReferentialConstraint>
+                    <Principal Role="RecPlant">
+                        <PropertyRef Name="RecPlantID" />
+                    </Principal>
+                    <Dependent Role="Order">
+                        <PropertyRef Name="RecPlantID" />
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+
+            <Association Name="Order_DelPlants">
+                <End Role="DelPlant" Type="ProjectModel.DelPlant" Multiplicity="0..1" />
+                <End Role="Order" Type="ProjectModel.Order" Multiplicity="*" />
+                <ReferentialConstraint>
+                    <Principal Role="DelPlant">
+                        <PropertyRef Name="DelPlantID" />
+                    </Principal>
+                    <Dependent Role="Order">
+                        <PropertyRef Name="DelPlantID" />
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
             
             <EntityContainer Name="ProjectEntities" m:IsDefaultEntityContainer="true">
+
                 <EntitySet Name="Orders" EntityType="ProjectModel.Order" />
                 <EntitySet Name="OrderItems" EntityType="ProjectModel.OrderItem" />
-                
+                <EntitySet Name="RecPlants" EntityType="ProjectModel.RecPlant" />
+                <EntitySet Name="DelPlants" EntityType="ProjectModel.DelPlant" />
                 
                 <AssociationSet Name="OrderOrderItems" Association="ProjectModel.Order_OrderItems">
                     <End Role="Order" EntitySet="Orders" />
                     <End Role="OrderItem" EntitySet="OrderItems" />
+                </AssociationSet>
+                <AssociationSet Name="OrderRecPlants" Association="ProjectModel.Order_RecPlants">
+                    <End Role="RecPlant" EntitySet="RecPlants"/>
+                    <End Role="Order" EntitySet="Orders" />
+                </AssociationSet>
+                <AssociationSet Name="OrderDelPlants" Association="ProjectModel.Order_DelPlants">
+                    <End Role="DelPlant" EntitySet="DelPlants"/>
+                    <End Role="Order" EntitySet="Orders" />
                 </AssociationSet>
                 
             </EntityContainer>
