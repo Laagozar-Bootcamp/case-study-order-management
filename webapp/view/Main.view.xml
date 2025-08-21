@@ -1,6 +1,47 @@
 <mvc:View controllerName="ordermanagement.controller.Main"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
+    <Page id="page" title="{i18n>title}" >
+        
+        <Table id="tabOrderList" mode="MultiSelect" items="{ path: '/Orders', sorter: { path: 'OrderNum' } }">
+        <headerToolbar>
+            <Toolbar id="tbOrderTab">
+                <Text id="txtTbOrder" text="Order"/>
+                <ToolbarSpacer id="tbSpacer"/>
+                <Button id="butAdd" icon="sap-icon://add" tooltip="Create Order" press="onPressCreate"/>
+                <Button id="butDelete" icon="sap-icon://delete" tooltip="Delete Order" press="onPressDelete"/>
+            </Toolbar>
+        </headerToolbar>
+
+        <columns>
+            <Column id="clmOrderNum">
+                <Text id="txtOrderNum" text="Order Number"/>
+            </Column>
+            <Column id="clmCreateDat">
+                <Text id="txtCreateDat" text="Creation Date"/>
+            </Column>
+            <Column id="clmRecPlant">
+                <Text id="txtRecPlant" text="Receiving Plant"/>
+            </Column>
+            <Column id="clmDelPlant">
+                <Text id="txtDelPlant" text="Deivering Plant"/>
+            </Column>
+            <Column id="clmStatus">
+                <Text id="txtStatus" text="Status"/>
+            </Column>
+        </columns>
+
+        <items>
+            <ColumnListItem id="listOrders" vAlign="Middle" type="Navigation" press="onPressOrder">
+                <cells>
+                    <Text id="colOrderNum" text="{OrderNum}"/>
+                    <Text id="colCreateDat" text="{CreateDat}"/>
+                    <Text id="colRecPlant" text="{RecPlant}"/>
+                    <Text id="colDelPlant" text="{DelPlant}"/>
+                    <Text id="colStatus" text="{Status}"/>
+                </cells>
+            </ColumnListItem>
+        </items>
+        </Table>
     </Page>
 </mvc:View>
