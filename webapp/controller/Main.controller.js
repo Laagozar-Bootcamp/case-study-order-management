@@ -1,11 +1,30 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/m/MessageToast",
-], (Controller, MessageToast) => {
+    "sap/ui/model/Filter",
+    "sap/ui/model/FilterOperator"
+], (Controller, MessageToast, Filter, FilterOperator) => {
     "use strict";
 
     return Controller.extend("ordermanagement.controller.Main", {
         onInit() {
+        },
+
+        onSearch: function(){
+            const oView = this.getView();
+            const sOrderNumber = oView.byId("inpOrderNumber").getValue();
+
+            //add filters
+            const aFilters = [];
+            if(sOrderNumber){
+                aFilters.push(new Filter("OrderNum", FilterOperator.Contains, sOrderNumber));
+            }
+
+            //apply filters
+            const oTable = oView.byId("tabOrderList");
+            const oBinding = oTable.getBinding("items");
+            oBinding.filter(aFilters);
+            
         },
 
         onPressCreate: function(){
