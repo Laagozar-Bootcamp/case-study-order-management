@@ -3,7 +3,7 @@
         "CreateDat": "/Date(377455986000)/",
         "RecPlantDesc": "RecPlantDesc1",
         "DelPlantDesc": "DelPlantDesc1",
-        "Status": "Status1",
+        "Status": "Created",
         "OrderNum": 448165114,
         "RecPlantID": "QAML",
         "DelPlantID": "OYfI"
@@ -12,7 +12,7 @@
         "CreateDat": "/Date(278272858000)/",
         "RecPlantDesc": "RecPlantDesc2",
         "DelPlantDesc": "DelPlantDesc2",
-        "Status": "Status2",
+        "Status": "Created",
         "OrderNum": 936739825,
         "RecPlantID": "twfn",
         "DelPlantID": "HpjV"
@@ -21,7 +21,7 @@
         "CreateDat": "/Date(1212750830000)/",
         "RecPlantDesc": "RecPlantDesc3",
         "DelPlantDesc": "DelPlantDesc3",
-        "Status": "Status3",
+        "Status": "Created",
         "OrderNum": 873486142,
         "RecPlantID": "IbgM",
         "DelPlantID": "Rtvg"
@@ -30,7 +30,7 @@
         "CreateDat": "/Date(1412049579000)/",
         "RecPlantDesc": "RecPlantDesc4",
         "DelPlantDesc": "DelPlantDesc4",
-        "Status": "Status4",
+        "Status": "Created",
         "OrderNum": 1036544421,
         "RecPlantID": "YbHd",
         "DelPlantID": "bFLZ"
@@ -39,7 +39,7 @@
         "CreateDat": "/Date(43413020000)/",
         "RecPlantDesc": "RecPlantDesc5",
         "DelPlantDesc": "DelPlantDesc5",
-        "Status": "Status5",
+        "Status": "Created",
         "OrderNum": 1410289058,
         "RecPlantID": "Jtwc",
         "DelPlantID": "Uymz"
@@ -48,7 +48,7 @@
         "CreateDat": "/Date(849372105000)/",
         "RecPlantDesc": "RecPlantDesc6",
         "DelPlantDesc": "DelPlantDesc6",
-        "Status": "Status6",
+        "Status": "Released",
         "OrderNum": 1927955369,
         "RecPlantID": "LUxE",
         "DelPlantID": "RNLf"
@@ -57,7 +57,7 @@
         "CreateDat": "/Date(99509342000)/",
         "RecPlantDesc": "RecPlantDesc7",
         "DelPlantDesc": "DelPlantDesc7",
-        "Status": "Status7",
+        "Status": "Released",
         "OrderNum": 947512095,
         "RecPlantID": "ZKdw",
         "DelPlantID": "mRiq"
@@ -66,7 +66,7 @@
         "CreateDat": "/Date(83609378000)/",
         "RecPlantDesc": "RecPlantDesc8",
         "DelPlantDesc": "DelPlantDesc8",
-        "Status": "Status8",
+        "Status": "Released",
         "OrderNum": 94578469,
         "RecPlantID": "Zxtu",
         "DelPlantID": "LWwO"
@@ -75,7 +75,7 @@
         "CreateDat": "/Date(154882900000)/",
         "RecPlantDesc": "RecPlantDesc9",
         "DelPlantDesc": "DelPlantDesc9",
-        "Status": "Status9",
+        "Status": "Released",
         "OrderNum": 1631240998,
         "RecPlantID": "UJoa",
         "DelPlantID": "LGBW"
@@ -84,7 +84,7 @@
         "CreateDat": "/Date(333518566000)/",
         "RecPlantDesc": "RecPlantDesc10",
         "DelPlantDesc": "DelPlantDesc10",
-        "Status": "Status10",
+        "Status": "Released",
         "OrderNum": 1988236780,
         "RecPlantID": "mUAY",
         "DelPlantID": "IBRf"
@@ -93,7 +93,7 @@
         "CreateDat": "/Date(1143848882000)/",
         "RecPlantDesc": "RecPlantDesc11",
         "DelPlantDesc": "DelPlantDesc11",
-        "Status": "Status11",
+        "Status": "Partially Completed",
         "OrderNum": 978342476,
         "RecPlantID": "yKLI",
         "DelPlantID": "NMvd"
@@ -102,7 +102,7 @@
         "CreateDat": "/Date(1174287357000)/",
         "RecPlantDesc": "RecPlantDesc12",
         "DelPlantDesc": "DelPlantDesc12",
-        "Status": "Status12",
+        "Status": "Partially Completed",
         "OrderNum": 1015820333,
         "RecPlantID": "PPTO",
         "DelPlantID": "ZDtR"
@@ -111,7 +111,7 @@
         "CreateDat": "/Date(595668977000)/",
         "RecPlantDesc": "RecPlantDesc13",
         "DelPlantDesc": "DelPlantDesc13",
-        "Status": "Status13",
+        "Status": "Partially Completed",
         "OrderNum": 898347274,
         "RecPlantID": "amLg",
         "DelPlantID": "WHna"
@@ -120,7 +120,7 @@
         "CreateDat": "/Date(1374534229000)/",
         "RecPlantDesc": "RecPlantDesc14",
         "DelPlantDesc": "DelPlantDesc14",
-        "Status": "Status14",
+        "Status": "Partially Completed",
         "OrderNum": 177694070,
         "RecPlantID": "QfGl",
         "DelPlantID": "aAIt"
@@ -129,7 +129,7 @@
         "CreateDat": "/Date(1405357308000)/",
         "RecPlantDesc": "RecPlantDesc15",
         "DelPlantDesc": "DelPlantDesc15",
-        "Status": "Status15",
+        "Status": "Partially Completed",
         "OrderNum": 570981981,
         "RecPlantID": "YFEj",
         "DelPlantID": "SRVG"
@@ -138,7 +138,7 @@
         "CreateDat": "/Date(979024533000)/",
         "RecPlantDesc": "RecPlantDesc16",
         "DelPlantDesc": "DelPlantDesc16",
-        "Status": "Status16",
+        "Status": "Delivered",
         "OrderNum": 443419058,
         "RecPlantID": "vHVg",
         "DelPlantID": "uLUw"
@@ -147,7 +147,7 @@
         "CreateDat": "/Date(1438092098000)/",
         "RecPlantDesc": "RecPlantDesc17",
         "DelPlantDesc": "DelPlantDesc17",
-        "Status": "Status17",
+        "Status": "Delivered",
         "OrderNum": 1510216714,
         "RecPlantID": "EZhQ",
         "DelPlantID": "TjJu"
@@ -156,7 +156,7 @@
         "CreateDat": "/Date(697369151000)/",
         "RecPlantDesc": "RecPlantDesc18",
         "DelPlantDesc": "DelPlantDesc18",
-        "Status": "Status18",
+        "Status": "Delivered",
         "OrderNum": 957686703,
         "RecPlantID": "LEpK",
         "DelPlantID": "nzJI"
@@ -165,7 +165,7 @@
         "CreateDat": "/Date(991140223000)/",
         "RecPlantDesc": "RecPlantDesc19",
         "DelPlantDesc": "DelPlantDesc19",
-        "Status": "Status19",
+        "Status": "Delivered",
         "OrderNum": 274552184,
         "RecPlantID": "NPLj",
         "DelPlantID": "gFPL"
@@ -174,7 +174,7 @@
         "CreateDat": "/Date(808720418000)/",
         "RecPlantDesc": "RecPlantDesc20",
         "DelPlantDesc": "DelPlantDesc20",
-        "Status": "Status20",
+        "Status": "Delivered",
         "OrderNum": 433370343,
         "RecPlantID": "Vtek",
         "DelPlantID": "oNRs"
