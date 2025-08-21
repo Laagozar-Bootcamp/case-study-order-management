@@ -1,33 +1,71 @@
 <mvc:View controllerName="ordermanagement.controller.Main"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    xmlns:filterbar="sap.ui.comp.filterbar"
+    xmlns:core="sap.ui.core">
     <Page id="page" title="{i18n>title}" >
-        
+        <content>
+        <filterbar:FilterBar 
+            id="filterbarOrders" 
+            useToolbar="false" 
+            showClearOnFB="true" 
+            showFilterConfiguration="false" 
+            persistencyKey="OrdersFilters" 
+            search="onSearch">
+            <filterbar:filterGroupItems>
+
+                <filterbar:FilterGroupItem 
+                    id="fgiOrderNumer" name="OrderNumber" groupName="Group1" label="{i18n>orderNum}" visibleInFilterBar="true">
+                    <filterbar:control>
+                        <Input id="inpOrderNumber"/>
+                    </filterbar:control>
+                </filterbar:FilterGroupItem>
+                <filterbar:FilterGroupItem 
+                    id="fgiCreateDate" name="CreationDate" groupName="Group1" label="{i18n>createDat}" visibleInFilterBar="true">
+                    <filterbar:control>
+                        <DatePicker id="inpCreateDate"/>
+                    </filterbar:control>
+                </filterbar:FilterGroupItem>
+                <filterbar:FilterGroupItem 
+                    id="fgiStatus" name="Status" groupName="Group1" label="{i18n>status}" visibleInFilterBar="true">
+                    <filterbar:control>
+                        <MultiComboBox id="mcbStatus" name="MultiComboBoxStatus" selectionChange="onSelectionChange">
+                        <core:Item id="itemCreate" key="created" text="Created"/>
+                        <core:Item id="itemReleased" key="released" text="Released"/>
+                        <core:Item id="itemPartComp" key="partComp" text="Paritally Completed"/>
+                        <core:Item id="itemDelivered" key="delivered" text="Delivered"/>
+                        </MultiComboBox>
+                    </filterbar:control>
+                </filterbar:FilterGroupItem>
+
+            </filterbar:filterGroupItems>
+        </filterbar:FilterBar>
+        </content>
         <Table id="tabOrderList" mode="MultiSelect" items="{ path: '/Orders', sorter: { path: 'OrderNum' } }">
         <headerToolbar>
             <Toolbar id="tbOrderTab">
-                <Text id="txtTbOrder" text="Order"/>
+                <Text id="txtTbOrder" text="{i18n>order}"/>
                 <ToolbarSpacer id="tbSpacer"/>
-                <Button id="butAdd" icon="sap-icon://add" tooltip="Create Order" press="onPressCreate"/>
-                <Button id="butDelete" icon="sap-icon://delete" tooltip="Delete Order" press="onPressDelete"/>
+                <Button id="butAdd" icon="sap-icon://add" tooltip="{i18n>create}" press="onPressCreate"/>
+                <Button id="butDelete" icon="sap-icon://delete" tooltip="{i18n>delete}" press="onPressDelete"/>
             </Toolbar>
         </headerToolbar>
 
         <columns>
             <Column id="clmOrderNum">
-                <Text id="txtOrderNum" text="Order Number"/>
+                <Text id="txtOrderNum" text="{i18n>orderNum}"/>
             </Column>
             <Column id="clmCreateDat">
-                <Text id="txtCreateDat" text="Creation Date"/>
+                <Text id="txtCreateDat" text="{i18n>createDat}"/>
             </Column>
             <Column id="clmRecPlant">
-                <Text id="txtRecPlant" text="Receiving Plant"/>
+                <Text id="txtRecPlant" text="{i18n>recPlant}"/>
             </Column>
             <Column id="clmDelPlant">
-                <Text id="txtDelPlant" text="Deivering Plant"/>
+                <Text id="txtDelPlant" text="{i18n>delPlant}"/>
             </Column>
             <Column id="clmStatus">
-                <Text id="txtStatus" text="Status"/>
+                <Text id="txtStatus" text="{i18n>status}"/>
             </Column>
         </columns>
 
@@ -36,8 +74,8 @@
                 <cells>
                     <Text id="colOrderNum" text="{OrderNum}"/>
                     <Text id="colCreateDat" text="{CreateDat}"/>
-                    <Text id="colRecPlant" text="{RecPlant}"/>
-                    <Text id="colDelPlant" text="{DelPlant}"/>
+                    <Text id="colRecPlant" text="{RecPlantID} - {RecPlantDesc}"/>
+                    <Text id="colDelPlant" text="{DelPlantID} - {DelPlantDesc}"/>
                     <Text id="colStatus" text="{Status}"/>
                 </cells>
             </ColumnListItem>
