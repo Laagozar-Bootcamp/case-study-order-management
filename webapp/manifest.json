@@ -95,12 +95,27 @@
           "target": [
             "TargetMain"
           ]
-        }
+        },
+        {
+            "name": "RouteCreatePage",
+            "pattern": "Create",
+            "target": [
+              "TargetCreatePage"
+            ]
+          }
       ],
       "targets": {
         "TargetMain": {
           "id": "Main",
           "name": "Main"
+        },
+
+        "TargetCreatePage": {
+          "viewId": "CreatePage",
+          "viewName": "CreatePage",
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false
         }
       }
     },
