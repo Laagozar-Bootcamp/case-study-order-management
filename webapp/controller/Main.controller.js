@@ -8,23 +8,25 @@ sap.ui.define([
         onInit() {
         },
 
-        onPressDelete: function(){
-            /*
-            let aSelectedOrders = this.getView().byId("tabOrderList").getSelectedIndices();
-
-            if(aSelectedOrders.length = "0"){
+        onPressDelete: function(evt){
+            const oTableOrders = this.byId("tabOrderList");
+            const aTabOrdsPaths = oTableOrders._aSelectedPaths;
+            
+            if(aTabOrdsPaths.length < 1){
                 MessageToast.show("Please select an item from the table");
             }else {
                 let oModel = this.getOwnerComponent().getModel();
-                let sSelItemPath = aSelectedOrders.getBindingContextPath();
+                aTabOrdsPaths.forEach(function(sPath) {
+                    oModel.remove(sPath, {
+                        success: function (data) {
 
-                oModel.remove(sSelItemPath,{
-                success: function (data) {
-                },
-                error: function (data){
-                }
+                        },
+                        error: function (data){
+
+                        }
+                    })
                 })
-            }*/
+            }
         }
     });
 });
