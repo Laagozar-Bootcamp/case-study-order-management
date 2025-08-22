@@ -102,7 +102,13 @@
             "target": [
               "TargetCreatePage"
             ]
-          }
+          },
+          {
+            "name": "RouteDetailPage",
+            "pattern": "Detail",
+            "target": [
+              "TargetDetailPage" ]
+          }         
       ],
       "targets": {
         "TargetMain": {
@@ -116,7 +122,12 @@
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false
-        }
+        },     
+
+        "TargetDetailPage": {
+          "viewId": "DetailPage",
+          "viewName": "DetailPage"
+        }        
       }
     },
     "rootView": {
