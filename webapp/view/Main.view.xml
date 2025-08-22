@@ -30,7 +30,7 @@
                 <filterbar:FilterGroupItem 
                     id="fgiStatus" name="Status" groupName="Group1" label="{i18n>status}" visibleInFilterBar="true">
                     <filterbar:control>
-                        <MultiComboBox id="mcbStatus" name="MultiComboBoxStatus" selectionChange="onSelectionChange">
+                        <MultiComboBox id="mcbStatus" name="MultiComboBoxStatus">
                         <core:Item id="itemCreate" key="created" text="Created"/>
                         <core:Item id="itemReleased" key="released" text="Released"/>
                         <core:Item id="itemPartComp" key="partComp" text="Paritally Completed"/>
