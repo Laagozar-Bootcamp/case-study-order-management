@@ -2,12 +2,14 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/m/MessageToast",
     "sap/ui/model/Filter",
-    "sap/ui/model/FilterOperator"
-], (Controller, MessageToast, Filter, FilterOperator) => {
+    "sap/ui/model/FilterOperator",
+    "ordermanagement/model/formatter"
+], (Controller, MessageToast, Filter, FilterOperator, formatter) => {
     "use strict";
 
-    return Controller.extend("ordermanagement.controller.Main", {
+    return Controller.extend("ordermanagement.controller.Main", { formatter: formatter,
         onInit() {
+            
         },
 
         onSearch: function(){
@@ -76,11 +78,13 @@ sap.ui.define([
             aTabOrdsPaths.forEach(function(sPath) {
                 oModel.remove(sPath, { 
                     success: function (data) {
-                        },
+                        MessageToast.show("Orders Deleted");
+                    },
                     error: function (data){
-                        }
-                    })
+                        MessageToast.show("Error encountered during deletion process");
+                    }
                 })
+            })
         },
 
     });
