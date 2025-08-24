@@ -4,5 +4,21 @@
     xmlns:filterbar="sap.ui.comp.filterbar"
     xmlns:core="sap.ui.core">
     <Page id="pageDisplay" title="{i18n>titleDetail}" >
+        <customHeader>
+            <Bar id="barHdrDetail">
+                <contentLeft>
+                    <Text id="txtHdrDetail" text="{i18n>HeaderTxtDetail}"  class="classDetailHeader">
+                    </Text>
+                </contentLeft>
+            </Bar>
+        </customHeader>
+        
+        <footer>
+            <OverflowToolbar id="idOToolbarDetail">
+                <ToolbarSpacer id="idToolbarDetail"/>
+                <Button id="idBtnDetailEdit"    text="{i18n>btnTxtDtlEdit}"    tooltip="{i18n>tooltipDtlEdit}"    press="onPressDetailEdit"/>
+                <Button id="idBtnDetailCancel"  text="{i18n>btnTxtDtlCancel}"  tooltip="{i18n>tooltipDtlCancel}"  press="onPressDetailCancel"/>
+            </OverflowToolbar>
+        </footer>
     </Page>
 </mvc:View>
