@@ -1,1 +1,6 @@
 /* Enter your custom styles here */
+.classDetailHeader {
+    color: #071224;  /* Replace with your desired color */
+    font-weight: bold; /* Optional: Make it bold */
+    font-size: large;
+}
