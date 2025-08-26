@@ -12,7 +12,7 @@
                 <f:heading>
                     <Title 
                         level="H2"
-                        text="${i18n>page.editTitle}" 
+                        text="{i18n>page.editTitle}" 
                     />
                 </f:heading>
             </f:DynamicPageTitle>
