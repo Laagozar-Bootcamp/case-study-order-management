@@ -21,7 +21,16 @@ sap.ui.define([
             return oCurrency.formatValue([fUnitPrice * fQty], "string");
         },
 
-        //formatStatus: function (sStatus) { 
-        //}
+        /*
+        Apply conditional styling (?)
+        formatStatus: function (sStatus) { 
+            if("Released"){
+
+            }else if("Partially Completed"){
+
+            }else { //Delivered
+
+            }
+        }*/
     };
 });

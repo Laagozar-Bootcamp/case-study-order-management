@@ -1,82 +1,50 @@
 [
     {
         "RecPlantID": "QAML",
-        "RecPlantDesc": "RecPlantDesc1"
+        "RecPlantDesc": "Manila"
     },
     {
         "RecPlantID": "twfn",
-        "RecPlantDesc": "RecPlantDesc2"
+        "RecPlantDesc": "Quezon City"
     },
     {
         "RecPlantID": "IbgM",
-        "RecPlantDesc": "RecPlantDesc3"
+        "RecPlantDesc": "Caloocan"
     },
     {
         "RecPlantID": "YbHd",
-        "RecPlantDesc": "RecPlantDesc4"
+        "RecPlantDesc": "Pasay"
     },
     {
         "RecPlantID": "Jtwc",
-        "RecPlantDesc": "RecPlantDesc5"
+        "RecPlantDesc": "Makati"
     },
     {
         "RecPlantID": "LUxE",
-        "RecPlantDesc": "RecPlantDesc6"
+        "RecPlantDesc": "Taguig"
     },
     {
         "RecPlantID": "ZKdw",
-        "RecPlantDesc": "RecPlantDesc7"
+        "RecPlantDesc": "Pasig"
     },
     {
         "RecPlantID": "Zxtu",
-        "RecPlantDesc": "RecPlantDesc8"
+        "RecPlantDesc": "Marikina"
     },
     {
         "RecPlantID": "UJoa",
-        "RecPlantDesc": "RecPlantDesc9"
+        "RecPlantDesc": "Valenzuela"
     },
     {
         "RecPlantID": "mUAY",
-        "RecPlantDesc": "RecPlantDesc10"
+        "RecPlantDesc": "Malabon"
     },
     {
         "RecPlantID": "yKLI",
-        "RecPlantDesc": "RecPlantDesc11"
+        "RecPlantDesc": "Muntinlupa"
     },
     {
         "RecPlantID": "PPTO",
-        "RecPlantDesc": "RecPlantDesc12"
-    },
-    {
-        "RecPlantID": "amLg",
-        "RecPlantDesc": "RecPlantDesc13"
-    },
-    {
-        "RecPlantID": "QfGl",
-        "RecPlantDesc": "RecPlantDesc14"
-    },
-    {
-        "RecPlantID": "YFEj",
-        "RecPlantDesc": "RecPlantDesc15"
-    },
-    {
-        "RecPlantID": "vHVg",
-        "RecPlantDesc": "RecPlantDesc16"
-    },
-    {
-        "RecPlantID": "EZhQ",
-        "RecPlantDesc": "RecPlantDesc17"
-    },
-    {
-        "RecPlantID": "LEpK",
-        "RecPlantDesc": "RecPlantDesc18"
-    },
-    {
-        "RecPlantID": "NPLj",
-        "RecPlantDesc": "RecPlantDesc19"
-    },
-    {
-        "RecPlantID": "Vtek",
-        "RecPlantDesc": "RecPlantDesc20"
+        "RecPlantDesc": "San Juan"
     }
 ]

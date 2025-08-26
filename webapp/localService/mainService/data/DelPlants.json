@@ -1,82 +1,50 @@
 [
     {
         "DelPlantID": "OYfI",
-        "DelPlantDesc": "DelPlantDesc1"
+        "DelPlantDesc": "Laoag"
     },
     {
         "DelPlantID": "HpjV",
-        "DelPlantDesc": "DelPlantDesc2"
+        "DelPlantDesc": "Legazpi"
     },
     {
         "DelPlantID": "Rtvg",
-        "DelPlantDesc": "DelPlantDesc3"
+        "DelPlantDesc": "Naga"
     },
     {
         "DelPlantID": "bFLZ",
-        "DelPlantDesc": "DelPlantDesc4"
+        "DelPlantDesc": "Lucena"
     },
     {
         "DelPlantID": "Uymz",
-        "DelPlantDesc": "DelPlantDesc5"
+        "DelPlantDesc": "Lipa"
     },
     {
         "DelPlantID": "RNLf",
-        "DelPlantDesc": "DelPlantDesc6"
+        "DelPlantDesc": "Olongapo"
     },
     {
         "DelPlantID": "mRiq",
-        "DelPlantDesc": "DelPlantDesc7"
+        "DelPlantDesc": "Ormoc"
     },
     {
         "DelPlantID": "LWwO",
-        "DelPlantDesc": "DelPlantDesc8"
+        "DelPlantDesc": "Roxas"
     },
     {
         "DelPlantID": "LGBW",
-        "DelPlantDesc": "DelPlantDesc9"
+        "DelPlantDesc": "Bacolod"
     },
     {
         "DelPlantID": "IBRf",
-        "DelPlantDesc": "DelPlantDesc10"
+        "DelPlantDesc": "Dipolog"
     },
     {
         "DelPlantID": "NMvd",
-        "DelPlantDesc": "DelPlantDesc11"
+        "DelPlantDesc": "Butuan"
     },
     {
         "DelPlantID": "ZDtR",
-        "DelPlantDesc": "DelPlantDesc12"
-    },
-    {
-        "DelPlantID": "WHna",
-        "DelPlantDesc": "DelPlantDesc13"
-    },
-    {
-        "DelPlantID": "aAIt",
-        "DelPlantDesc": "DelPlantDesc14"
-    },
-    {
-        "DelPlantID": "SRVG",
-        "DelPlantDesc": "DelPlantDesc15"
-    },
-    {
-        "DelPlantID": "uLUw",
-        "DelPlantDesc": "DelPlantDesc16"
-    },
-    {
-        "DelPlantID": "TjJu",
-        "DelPlantDesc": "DelPlantDesc17"
-    },
-    {
-        "DelPlantID": "nzJI",
-        "DelPlantDesc": "DelPlantDesc18"
-    },
-    {
-        "DelPlantID": "gFPL",
-        "DelPlantDesc": "DelPlantDesc19"
-    },
-    {
-        "DelPlantID": "oNRs",
-        "DelPlantDesc": "DelPlantDesc20"
+        "DelPlantDesc": "Tagum"
     }
 ]
