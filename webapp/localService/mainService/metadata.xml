@@ -5,9 +5,9 @@
                 <Key>
                     <PropertyRef  Name="OrderNum"/>
                 </Key>
-                <Property Name="OrderNum" Type="Edm.Int32" Nullable="false" sap:label="Order Number">
+                <Property Name="OrderNum" Type="Edm.String" Nullable="false" sap:label="Order Number">
                 </Property>
-                <Property Name="CreateDat" Type="Edm.Date" sap:label="Creation Date">
+                <Property Name="CreateDat" Type="Edm.Date" Nullable="false" sap:label="Creation Date">
                 </Property>
                 <Property Name="RecPlantID" Type="Edm.String" MaxLength="4" sap:label="Receiving Plant ID">
                 </Property>
