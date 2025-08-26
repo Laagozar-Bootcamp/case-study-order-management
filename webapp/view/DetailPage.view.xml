@@ -3,16 +3,22 @@
     xmlns="sap.m"
     xmlns:filterbar="sap.ui.comp.filterbar"
     xmlns:core="sap.ui.core">
-    <Page id="pageDisplay" title="{i18n>titleDetail}" >
+    <Page id="pageDisplay">
         <customHeader>
             <Bar id="barHdrDetail">
                 <contentLeft>
-                    <Text id="txtHdrDetail" text="{i18n>HeaderTxtDetail}"  class="classDetailHeader">
+                    <Text id="txtHdrDetail" text="{i18n>titleDetail}"  class="classDetailHeader">
                     </Text>
                 </contentLeft>
             </Bar>
         </customHeader>
+
+        <!-- Display the Order Details -->
+        <core:Fragment fragmentName="ordermanagement.fragment.OrderDetails" type="XML" />        
         
+        <!-- Display the Product List data based on the selected Order No from Main Page -->
+        <core:Fragment fragmentName="ordermanagement.fragment.ProductListDetails" type="XML" />        
+
         <footer>
             <OverflowToolbar id="idOToolbarDetail">
                 <ToolbarSpacer id="idToolbarDetail"/>
