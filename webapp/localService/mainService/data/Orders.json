@@ -1,110 +1,65 @@
 [
     {
-        "CreateDat": "/Date(1300147200000)/",
-        "RecPlantDesc": "Manila",
-        "DelPlantDesc": "Laoag",
-        "Status": "Created",
-        "OrderNum": "29990",
-        "RecPlantID": "QAML",
-        "DelPlantID": "OYfI"
-    },
-    {
-        "CreateDat": "/Date(1374451200000)/",
-        "RecPlantDesc": "Quezon City",
-        "DelPlantDesc": "Legazpi",
-        "Status": "Created",
-        "OrderNum": "29901",
-        "RecPlantID": "twfn",
-        "DelPlantID": "HpjV"
-    },
-    {
-        "CreateDat": "/Date(1446940800000)/",
-        "RecPlantDesc": "Caloocan",
-        "DelPlantDesc": "Naga",
-        "Status": "Created",
-        "OrderNum": "28892",
-        "RecPlantID": "IbgM",
-        "DelPlantID": "Rtvg"
-    },
-    {
-        "CreateDat": "/Date(1456704000000)/",
-        "RecPlantDesc": "Pasay",
-        "DelPlantDesc": "Lucena",
+        "CreateDat": "2025-01-02",
         "Status": "Released",
-        "OrderNum": "20203",
-        "RecPlantID": "YbHd",
-        "DelPlantID": "bFLZ"
+        "OrderNum": "012202",
+        "RecPlantID": "9101",
+        "RecPlantDesc": "Singapore",
+        "DelPlantID": "9102",
+        "DelPlantDesc": "Philippines"
     },
     {
-        "CreateDat": "/Date(1538524800000)/",
-        "RecPlantDesc": "Makati",
-        "DelPlantDesc": "Lipa",
-        "Status": "Released",
-        "OrderNum": "30004",
-        "RecPlantID": "Jtwc",
-        "DelPlantID": "Uymz"
+        "CreateDat": "2025-01-01",
+        "Status": "Created",
+        "OrderNum": "012201",
+        "RecPlantID": "9101",
+        "RecPlantDesc": "Singapore",
+        "DelPlantID": "9102",
+        "DelPlantDesc": "Philippines"
     },
     {
-        "CreateDat": "/Date(849372105000)/",
-        "RecPlantDesc": "Taguig",
-        "DelPlantDesc": "Olongapo",
-        "Status": "Released",
-        "OrderNum": "10105",
-        "RecPlantID": "LUxE",
-        "DelPlantID": "RNLf"
-    },
-    {
-        "CreateDat": "/Date(1578787200000)/",
-        "RecPlantDesc": "Pasig",
-        "DelPlantDesc": "Ormoc",
+        "CreateDat": "2025-01-03",
         "Status": "Partially Completed",
-        "OrderNum": "18006",
-        "RecPlantID": "ZKdw",
-        "DelPlantID": "mRiq"
+        "OrderNum": "012203",
+        "RecPlantID": "9101",
+        "RecPlantDesc": "Singapore",
+        "DelPlantID": "9102",
+        "DelPlantDesc": "Philippines"
     },
     {
-        "CreateDat": "/Date(1403654400000)/",
-        "RecPlantDesc": "Marikina",
-        "DelPlantDesc": "Roxas",
-        "Status": "Partially Completed",
-        "OrderNum": "10057",
-        "RecPlantID": "Zxtu",
-        "DelPlantID": "LWwO"
-    },
-    {
-        "CreateDat": "/Date(1660867200000)/",
-        "RecPlantDesc": "Valenzuela",
-        "DelPlantDesc": "Bacolod",
-        "Status": "Partially Completed",
-        "OrderNum": "10048",
-        "RecPlantID": "UJoa",
-        "DelPlantID": "LGBW"
-    },
-    {
-        "CreateDat": "/Date(1767139200000)/",
-        "RecPlantDesc": "Malabon",
-        "DelPlantDesc": "Dipolog",
+        "CreateDat": "2025-01-04",
         "Status": "Delivered",
-        "OrderNum": "10039",
-        "RecPlantID": "mUAY",
-        "DelPlantID": "IBRf"
+        "OrderNum": "012204",
+        "RecPlantID": "9101",
+        "RecPlantDesc": "Singapore",
+        "DelPlantID": "9102",
+        "DelPlantDesc": "Philippines"
     },
     {
-        "CreateDat": "/Date(1491523200000)/",
-        "RecPlantDesc": "Muntinlupa",
-        "DelPlantDesc": "Butuan",
-        "Status": "Delivered",
-        "OrderNum": "10020",
-        "RecPlantID": "yKLI",
-        "DelPlantID": "NMvd"
+        "CreateDat": "2025-01-05",
+        "Status": "Created",
+        "OrderNum": "012205",
+        "RecPlantID": "9101",
+        "RecPlantDesc": "Singapore",
+        "DelPlantID": "9102",
+        "DelPlantDesc": "Philippines"
     },
     {
-        "CreateDat": "/Date(1631232000000)/",
-        "RecPlantDesc": "San Juan",
-        "DelPlantDesc": "Tagum",
-        "Status": "Delivered",
-        "OrderNum": "10010",
-        "RecPlantID": "PPTO",
-        "DelPlantID": "ZDtR"
+        "CreateDat": "2025-01-06",
+        "Status": "Created",
+        "OrderNum": "012206",
+        "RecPlantID": "9101",
+        "RecPlantDesc": "Singapore",
+        "DelPlantID": "9102",
+        "DelPlantDesc": "Philippines"
+    },
+    {
+        "CreateDat": "2025-01-07",
+        "Status": "Created",
+        "OrderNum": "012207",
+        "RecPlantID": "9101",
+        "RecPlantDesc": "Singapore",
+        "DelPlantID": "9102",
+        "DelPlantDesc": "Philippines"
     }
 ]

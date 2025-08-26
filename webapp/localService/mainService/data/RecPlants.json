@@ -1,50 +1,14 @@
 [
     {
-        "RecPlantID": "QAML",
-        "RecPlantDesc": "Manila"
+        "RecPlantID": "9101",
+        "RecPlantDesc": "Singapore"
     },
     {
-        "RecPlantID": "twfn",
-        "RecPlantDesc": "Quezon City"
+        "RecPlantID": "9102",
+        "RecPlantDesc": "Malaysia"
     },
     {
-        "RecPlantID": "IbgM",
-        "RecPlantDesc": "Caloocan"
-    },
-    {
-        "RecPlantID": "YbHd",
-        "RecPlantDesc": "Pasay"
-    },
-    {
-        "RecPlantID": "Jtwc",
-        "RecPlantDesc": "Makati"
-    },
-    {
-        "RecPlantID": "LUxE",
-        "RecPlantDesc": "Taguig"
-    },
-    {
-        "RecPlantID": "ZKdw",
-        "RecPlantDesc": "Pasig"
-    },
-    {
-        "RecPlantID": "Zxtu",
-        "RecPlantDesc": "Marikina"
-    },
-    {
-        "RecPlantID": "UJoa",
-        "RecPlantDesc": "Valenzuela"
-    },
-    {
-        "RecPlantID": "mUAY",
-        "RecPlantDesc": "Malabon"
-    },
-    {
-        "RecPlantID": "yKLI",
-        "RecPlantDesc": "Muntinlupa"
-    },
-    {
-        "RecPlantID": "PPTO",
-        "RecPlantDesc": "San Juan"
+        "RecPlantID": "9103",
+        "RecPlantDesc": "Philippines"
     }
 ]
