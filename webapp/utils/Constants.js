@@ -10,16 +10,16 @@ sap.ui.define([], () => {
                 "Name" : "RouteMain"
             },
             "Create" : {
-                "View" : "Create",
-                "Name" : "RouteCreate"
+                "View" : "CreatePage",
+                "Name" : "RouteCreatePage"
             },
             "Details" : {
-                "View" : "Details",
-                "Name" : "RouteDetails"
+                "View" : "DetailPage",
+                "Name" : "RouteDetailPage"
             },
             "Edit" : {
-                "View" : "Edit",
-                "Name" : "RouteEdit"
+                "View" : "EditPage",
+                "Name" : "RouteEditPage"
             },
         },
         CONTROLS : {

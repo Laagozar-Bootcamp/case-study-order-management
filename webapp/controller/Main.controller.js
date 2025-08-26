@@ -1,13 +1,13 @@
 sap.ui.define([
     "ordermanagement/controller/BaseController",
+    "ordermanagement/utils/Constants",
     "sap/m/MessageToast",
     "sap/ui/model/Filter",
-    "sap/ui/model/FilterOperator",
-    "ordermanagement/model/formatter"
-], (BaseController, MessageToast, Filter, FilterOperator, formatter) => {
+    "sap/ui/model/FilterOperator"
+], (BaseController, Constants, MessageToast, Filter, FilterOperator) => {
     "use strict";
 
-    return BaseController.extend("ordermanagement.controller.Main", { formatter: formatter,
+    return BaseController.extend("ordermanagement.controller.Main", { 
         onInit() {
             
         },
@@ -108,15 +108,17 @@ sap.ui.define([
 
             if(aTabOrdsPaths.length > 1){
                 MessageToast.show("Please select only one item from the table");
-            }else {                
+            }else {      
+                const oItem           = oEvent.getSource(),
+                      oBindingContext = oItem.getBindingContext(),
+                      sOrderNum       = oBindingContext.getProperty(Constants.FIELD.OrderNum);           
                 if(oSelectedContext)
                 {
                     var oSelectedData = oSelectedContext.getObject();
                     this._bindDatatoForm(oSelectedData);
                 }
-                oRouter.navTo("RouteDetailPage", {
-                    idOrderNo:  sOrderNumber
-                });
+
+                this.navigateTo(Constants.ROUTE.Details.Name, { OrderNum: sOrderNum });
             }
         },
          

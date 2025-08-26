@@ -8,7 +8,7 @@
         id="productsTable"
         class="sapUiLargeMarginTop"
         inset="false"
-        mode="{= ${viewState>/mode} === 'Edit' ? 'MultiSelect' : 'None' }"
+        mode="MultiSelect"
     >
         <headerToolbar>
             <OverflowToolbar>
@@ -18,13 +18,11 @@
                     <Button
                         tooltip="{i18n>button.create}"
                         icon="sap-icon://add"
-                        press="_onBtnPressProductCreate"
-                        visible="{= ${viewState>/mode} === 'Edit' }"/>
+                        press="_onBtnPressProductCreate"/>
                     <Button
                         tooltip="{i18n>button.delete}"
                         icon="sap-icon://delete"
-                        press="_onBtnPressProductDelete"
-                        visible="{= ${viewState>/mode} === 'Edit' }"/>
+                        press="_onBtnPressProductDelete"/>
                 </content>
             </OverflowToolbar>
         </headerToolbar>

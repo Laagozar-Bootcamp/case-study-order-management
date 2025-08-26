@@ -1,0 +1,37 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+
+	<TableSelectDialog
+		id="productsTableSearch"
+		class="sapUiLargeMarginTop"
+		noDataText="{i18n>info.noProductsFound}"
+		title="{i18n>product.searchTableTitle}"
+		confirm="_onAddProduct"
+		search="_onSearchProduct"
+		contentWidth="90%"
+		contentHeight="70%"
+		items="">
+		<columns>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{i18n>column.productName}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{i18n>column.pricePerQuantity}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{i18n>column.quantity}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem vAlign="Middle">
+				<cells>
+					<ObjectIdentifier title="{ProductID} - {ProductName}"/>
+					<Text text="{UnitPrice}" />
+					<Input type="Number" enabled="false" />
+				</cells>
+			</ColumnListItem>
+		</items>
+	</TableSelectDialog>
+    
+</core:FragmentDefinition>
