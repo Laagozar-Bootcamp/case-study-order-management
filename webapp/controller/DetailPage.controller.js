@@ -1,12 +1,13 @@
 sap.ui.define([
     "ordermanagement/controller/BaseController",
+    "ordermanagement/utils/Constants",
     "sap/m/MessageToast",
     "sap/ui/core/routing/History"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} BaseController
      */
-    function (BaseController, MessageToast, History) {
+    function (BaseController, Constants, MessageToast, History) {
         "use strict";
 
         return BaseController.extend("ordermanagement.controller.DetailPage", {
@@ -17,13 +18,19 @@ sap.ui.define([
                 },
                 
             _onObjectMatched: function (oEvent) {
+                const oParam = oEvent.getParameter(Constants.PARAM.Arguments);
 
-                var sOrderNumber = oEvent.getParameter("arguments").idOrderNo;      
+                // Bind the view to the specific order data
+                if(oParam){
+                    this.bindViewToEntity(this.getView(), Constants.ENTITY.Orders, oParam.OrderNum);
+                }
 
-                var sPath = "/Orders(" + sOrderNumber + ")";
-                this.getView().bindElement({
-                    path: sPath
-                    })
+                // var sOrderNumber = oEvent.getParameter("arguments").idOrderNo;      
+
+                // var sPath = "/Orders(" + sOrderNumber + ")";
+                // this.getView().bindElement({
+                //     path: sPath
+                //     })
                 },
 
             //Add Route Navigation function when user click the Cancel button
@@ -38,10 +45,17 @@ sap.ui.define([
                     oRouter.navTo("Main", {}, true);
                 }
             },
-            
-            //Add Route Navigation function when user click the Edit button
-            onPressDetailEdit: function(oEvent){
-                this.getOwnerComponent().getRouter().navTo("RouteEditPage");
+            /**
+             * Navigate to Edit page of the order.
+             * @public
+             */
+            onPressDetailEdit: function(){
+                const sOrderNum = this.getBindingContextValue(Constants.FIELD.OrderNum);
+
+                if (sOrderNum){
+
+                    this.navigateTo(Constants.ROUTE.Edit.Name, { OrderNum: sOrderNum });
+                }
             }
 
         });

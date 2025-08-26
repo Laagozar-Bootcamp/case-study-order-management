@@ -20,8 +20,7 @@
         columnsXL="1"
         columnsL="1"
         columnsM="1"
-        singleContainerFullSize="true" 
-        visible="{= ${viewState>/mode} === 'Edit' }">
+        singleContainerFullSize="true" >
         <f:content>
             <Label text="{i18n>order.number}" labelFor="inpOrderNum" />
             <Input id="inpOrderNum" 

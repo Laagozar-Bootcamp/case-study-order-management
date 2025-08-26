@@ -1,6 +1,5 @@
 <core:FragmentDefinition xmlns="sap.m"
 xmlns:core="sap.ui.core"
-core:require="{formatter: 'ordermanagement/model/formatter'}"
 >
     <Panel id="paneProductList" class="sapUiResponsiveMargin" width="auto" >
         <!-- PENDING!!! For enhancement! How to access the Order No. of selected row from previouse Page -->

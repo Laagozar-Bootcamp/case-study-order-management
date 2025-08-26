@@ -2,8 +2,7 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:filterbar="sap.ui.comp.filterbar"
-    xmlns:core="sap.ui.core"
-    core:require="{formatter: 'ordermanagement/model/formatter'}">
+    xmlns:core="sap.ui.core">
     <Page id="page" title="{i18n>title}" >
         <content>
         <filterbar:FilterBar 
