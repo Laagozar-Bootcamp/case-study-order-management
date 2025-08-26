@@ -1,0 +1,50 @@
+<core:FragmentDefinition xmlns="sap.m"
+xmlns:core="sap.ui.core"
+core:require="{formatter: 'ordermanagement/model/formatter'}"
+>
+    <Panel id="paneProductList" class="sapUiResponsiveMargin" width="auto" >
+        <!-- PENDING!!! For enhancement! How to access the Order No. of selected row from previouse Page -->
+        <Table id="tabDtlProductList" items="{ path: '/OrderItems',
+                                     filters:[{ path: 'OrderNum', operator: 'EQ', value1: '94578469'
+                                             }] }">        
+            <!-- To display the Products Header Text -->
+            <headerToolbar>
+                <OverflowToolbar id="toolbarDtlProductsHeader">
+                <!-- PENDING!!! For enhancement: To include the row count in header text -->
+                    <Title id="titleDtlProductHeader" text="{i18n>titleDtlProducts}"/>            
+                </OverflowToolbar>
+            </headerToolbar>
+
+            <columns>
+                <Column id="colDtlProductName">
+                    <Text id="txtDtlProdName" text="{i18n>txtDtlProdName}"/>
+                </Column>
+                <Column id="colDtlQty">
+                    <Text id="txtDtlQty" text="{i18n>txtDtlQty}"/>
+                </Column>
+                <Column id="colDtlPricePerUnit">
+                    <Text id="txtDtlPricePerUnit" text="{i18n>txtDtlPricePerUnit}"/>
+                </Column>
+                <Column id="colDtlTotalPrice">
+                    <Text id="txtDtlTotalPrice" text="{i18n>txtDtlTotalPrice}"/>
+                </Column>
+            </columns>
+
+            <items>
+                <ColumnListItem id="listDtlProducts" vAlign="Middle" >
+                    <cells>
+                        <Text id="colItmDtlProdNo"       text="{ProductName}"/>
+                        <Text id="colItmDtlQty"          text="{Quantity}"/>
+                        <Text id="colItmDtlPricePerQty"  text="{UnitPrice}"/>
+                        <Text id="colItmDtlTotalPrice"   text="{ parts: [
+                                                            {path: 'UnitPrice'},
+                                                            {path: 'Quantity'}
+                                                            ],
+                                                            formatter: 'formatter.formatTotalPrice' }"/>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Panel>
+
+</core:FragmentDefinition>

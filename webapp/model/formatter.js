@@ -16,6 +16,11 @@ sap.ui.define([
             return "";
         },
 
+        formatTotalPrice: function (fUnitPrice, fQty) {
+            var oCurrency = new Currency();
+            return oCurrency.formatValue([fUnitPrice * fQty], "string");
+        },
+
         //formatStatus: function (sStatus) { 
         //}
     };

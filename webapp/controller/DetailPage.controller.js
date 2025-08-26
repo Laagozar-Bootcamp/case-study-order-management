@@ -10,16 +10,20 @@ sap.ui.define([
         "use strict";
 
         return Controller.extend("ordermanagement.controller.DetailPage", {
-            onInit: function () {                
-                // Get the router object
+            onInit: function () {               
+                 
                 var oRouter = this.getOwnerComponent().getRouter();
                 oRouter.getRoute("RouteDetailPage").attachPatternMatched(this._onObjectMatched, this);
                 },
                 
             _onObjectMatched: function (oEvent) {
-                // Get the passed value from arguments
-                var aArgs = oEvent.getParameter("arguments");                
-                // For Testing only: To check if Order Number is passed to next page
+
+                var sOrderNumber = oEvent.getParameter("arguments").idOrderNo;      
+
+                var sPath = "/Orders(" + sOrderNumber + ")";
+                this.getView().bindElement({
+                    path: sPath
+                    })
                 },
 
             //Add Route Navigation function when user click the Cancel button

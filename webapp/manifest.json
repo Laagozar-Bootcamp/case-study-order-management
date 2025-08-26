@@ -98,7 +98,7 @@
         },
         {
             "name": "RouteCreatePage",
-            "pattern": "Create",
+            "pattern": "Create/{idOrderNo}",
             "target": [
               "TargetCreatePage"
             ]

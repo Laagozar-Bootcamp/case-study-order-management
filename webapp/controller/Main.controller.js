@@ -100,19 +100,26 @@ sap.ui.define([
             const sOrderNumber   = oContext.getProperty("OrderNum");
             const oRouter        = this.getOwnerComponent().getRouter();            
 
-            const oTableOrders  = this.byId("tabOrderList");
-            const aTabOrdsPaths = oTableOrders._aSelectedPaths;
-            
             // Add Validation to display message if user selects multiple order/items
+            const oTableOrders  = this.byId("tabOrderList");
+            const aTabOrdsPaths = oTableOrders._aSelectedPaths;  
+
+            var oSelectedContext = oEvent.getParameter("rowContext");
+
             if(aTabOrdsPaths.length > 1){
                 MessageToast.show("Please select only one item from the table");
             }else {                
+                if(oSelectedContext)
+                {
+                    var oSelectedData = oSelectedContext.getObject();
+                    this._bindDatatoForm(oSelectedData);
+                }
                 oRouter.navTo("RouteDetailPage", {
-                    // To Follow: Logic to pass the selected row data to Detail page
+                    idOrderNo:  sOrderNumber
                 });
             }
         },
-
+         
         onPressDelete: function(evt){
             const oTableOrders = this.byId("tabOrderList");
             const aTabOrdsPaths = oTableOrders._aSelectedPaths;
