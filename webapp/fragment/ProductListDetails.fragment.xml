@@ -2,10 +2,11 @@
 xmlns:core="sap.ui.core"
 >
     <Panel id="paneProductList" class="sapUiResponsiveMargin" width="auto" >
-        <!-- PENDING!!! For enhancement! How to access the Order No. of selected row from previouse Page -->
-        <Table id="tabDtlProductList" items="{ path: '/OrderItems',
-                                     filters:[{ path: 'OrderNum', operator: 'EQ', value1: '94578469'
-                                             }] }">        
+        <Table id="tabDtlProductList" items="{ path: '/Products' }"    
+               class="sapUiLargeMarginTop"
+               inset="false"
+               mode="MultiSelect" >        
+
             <!-- To display the Products Header Text -->
             <headerToolbar>
                 <OverflowToolbar id="toolbarDtlProductsHeader">
@@ -32,12 +33,12 @@ xmlns:core="sap.ui.core"
             <items>
                 <ColumnListItem id="listDtlProducts" vAlign="Middle" >
                     <cells>
-                        <Text id="colItmDtlProdNo"       text="{ProductName}"/>
-                        <Text id="colItmDtlQty"          text="{Quantity}"/>
+                        <ObjectIdentifier title="{ProductID} - {ProductName}"/>
+                        <Text id="colItmDtlQty"          text="{OrderItems/Quantity}"/>
                         <Text id="colItmDtlPricePerQty"  text="{UnitPrice}"/>
                         <Text id="colItmDtlTotalPrice"   text="{ parts: [
-                                                            {path: 'UnitPrice'},
-                                                            {path: 'Quantity'}
+                                                            {path: 'OrderItems/Quantity'},
+                                                            {path: 'UnitPrice'}
                                                             ],
                                                             formatter: 'formatter.formatTotalPrice' }"/>
                     </cells>

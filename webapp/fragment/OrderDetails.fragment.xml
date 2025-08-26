@@ -5,32 +5,29 @@ xmlns:core="sap.ui.core">
 
     <Panel id="panelOrderDetails" headerText="{i18n>HeaderTxtDetail}" class="sapUiResponsiveMargin" width="auto" >    
 
-         <!-- bindingContexts="sformOrderDtls" -->
         <form:SimpleForm id="formOrderDetails" layout="ResponsiveGridLayout"
              labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="5" 
              emptySpanL="5" emptySpanM="5" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false" >
             
-            <!-- PENDING! To get the selected row data from previouse Page! Bindlging code not working! -->
             <form:content>                
                     <Label id="lblDtlOrderNo"     text="{i18n>orderNum}"/>
-                    <!-- <Text id="inpDtlOrderNo"      text="{Orders>OrderNum}" /> -->
-                    <Text id="inpDtlOrderNo"      text="10009-01-01" />
+                    <Text id="inpDtlOrderNo"      text="{OrderNum}" />
 
                     <Label id="lblDtlCreateDate"  text="{i18n>createDat}"/>
-                    <!-- <Text id="inpDtlCreateDate"   text="{Orders>CreateDat}" />         -->
-                    <Text id="inpDtlCreateDate"   text="01 Mar 2024" />        
+                    <Text id="inpDtlCreateDate"   text="{
+                                                        path: 'CreateDat',
+                                                        formatter: '.formatter.formatDate'
+                                                    }" />        
                     
                     <Label id="lblDtlRecPlant"    text="{i18n>recPlant}"/>
-                    <!-- <Text id="inpDtlRecPlant"     text="{Orders>RecPlantId} + '-' + {Orders>RecPlantDesc}" /> -->
-                    <Text id="inpDtlRecPlant"     text="9101 - Singapore" />
+                    <Text id="inpDtlRecPlant"     text="{RecPlantID} - {RecPlantDesc}"/>
 
                     <Label id="lblDtlDelPlant"    text="{i18n>delPlant}"/>
-                    <!-- <Text id="inpDtlDelPlant"     text="{Orders>DelPlantId} + '-' + {Orders>DelPlantDesc}" /> -->
-                    <Text id="inpDtlDelPlant"     text="9102 - Malaysia" />
+                    <Text id="inpDtlDelPlant"     text="{DelPlantID} - {DelPlantDesc}" />
 
                     <Label id="lblDtlStaus"       text="{i18n>status}"/>
-                    <!-- <Text id="inpDtlStatus"       text="{Orders>Status}" /> -->
-                    <Text id="inpDtlStatus"       text="Created" />
+                    <Text id="inpDtlStatus"       text="{Status}" />
+
             </form:content>
 
         </form:SimpleForm>        
