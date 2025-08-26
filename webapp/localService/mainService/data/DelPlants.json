@@ -1,50 +1,14 @@
 [
     {
-        "DelPlantID": "OYfI",
-        "DelPlantDesc": "Laoag"
+        "DelPlantID": "9101",
+        "DelPlantDesc": "Singapore"
     },
     {
-        "DelPlantID": "HpjV",
-        "DelPlantDesc": "Legazpi"
+        "DelPlantID": "9102",
+        "DelPlantDesc": "Malaysia"
     },
     {
-        "DelPlantID": "Rtvg",
-        "DelPlantDesc": "Naga"
-    },
-    {
-        "DelPlantID": "bFLZ",
-        "DelPlantDesc": "Lucena"
-    },
-    {
-        "DelPlantID": "Uymz",
-        "DelPlantDesc": "Lipa"
-    },
-    {
-        "DelPlantID": "RNLf",
-        "DelPlantDesc": "Olongapo"
-    },
-    {
-        "DelPlantID": "mRiq",
-        "DelPlantDesc": "Ormoc"
-    },
-    {
-        "DelPlantID": "LWwO",
-        "DelPlantDesc": "Roxas"
-    },
-    {
-        "DelPlantID": "LGBW",
-        "DelPlantDesc": "Bacolod"
-    },
-    {
-        "DelPlantID": "IBRf",
-        "DelPlantDesc": "Dipolog"
-    },
-    {
-        "DelPlantID": "NMvd",
-        "DelPlantDesc": "Butuan"
-    },
-    {
-        "DelPlantID": "ZDtR",
-        "DelPlantDesc": "Tagum"
+        "DelPlantID": "9103",
+        "DelPlantDesc": "Philippines"
     }
 ]

@@ -1,0 +1,26 @@
+[
+    {
+        "ProductID": "P002",
+        "ProductName": "Sony Bravia TV",
+        "UnitPrice": 30000,
+        "DelPlantID": "9102"
+    },
+    {
+        "ProductID": "P109",
+        "ProductName": "Samsung TV",
+        "UnitPrice": 50000,
+        "DelPlantID": "9102"
+    },
+    {
+        "ProductID": "P385",
+        "ProductName": "Philips TV",
+        "UnitPrice": 35000,
+        "DelPlantID": "9102"
+    },
+    {
+        "ProductID": "P386",
+        "ProductName": "Panasonic TV",
+        "UnitPrice": 35000,
+        "DelPlantID": "9101"
+    }
+]
