@@ -1,15 +1,15 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
+    "ordermanagement/controller/BaseController",
     "sap/m/MessageToast",
     "sap/ui/core/routing/History"
 ],
     /**
-     * @param {typeof sap.ui.core.mvc.Controller} Controller
+     * @param {typeof sap.ui.core.mvc.Controller} BaseController
      */
-    function (Controller, MessageToast, History) {
+    function (BaseController, MessageToast, History) {
         "use strict";
 
-        return Controller.extend("ordermanagement.controller.DetailPage", {
+        return BaseController.extend("ordermanagement.controller.DetailPage", {
             onInit: function () {               
                  
                 var oRouter = this.getOwnerComponent().getRouter();
