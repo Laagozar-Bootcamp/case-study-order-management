@@ -1,0 +1,41 @@
+<mvc:View controllerName="ordermanagement.controller.EditPage"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core">
+    <f:DynamicPage id="pageEdit"
+        class="sapUiResponsiveContentPadding"
+        showFooter="true">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title 
+                        level="H2"
+                        text="${i18n>page.editTitle}" 
+                    />
+                </f:heading>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:content>
+            <VBox class="sapUiSmallMargin">
+                <core:Fragment fragmentName="ordermanagement.fragment.EditForm" type="XML" />
+                <core:Fragment fragmentName="ordermanagement.fragment.ProductsTable" type="XML" />
+            </VBox>
+        </f:content>
+        <f:footer>
+            <OverflowToolbar>
+                <ToolbarSpacer/>
+                <Button 
+                    type="Emphasized" 
+                    text="{i18n>button.save}"
+                    press=".onBtnPressOrderSave"/>
+
+                <Button 
+                    type="Reject" 
+                    text="{i18n>button.cancel}"
+                    press=".onBtnPressCancel"/>
+            </OverflowToolbar>
+        </f:footer>
+    </f:DynamicPage>
+</mvc:View>

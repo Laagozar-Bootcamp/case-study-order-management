@@ -41,10 +41,7 @@ sap.ui.define([
             
             //Add Route Navigation function when user click the Edit button
             onPressDetailEdit: function(oEvent){
-                // const oRouter = this.getOwnerComponent().getRouter();            
-                //     oRouter.navTo("RouteEditPage", {
-                //     // }
-                // });
+                this.getOwnerComponent().getRouter().navTo("RouteEditPage");
             }
 
         });
