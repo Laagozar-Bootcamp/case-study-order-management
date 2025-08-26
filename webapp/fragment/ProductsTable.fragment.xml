@@ -1,0 +1,58 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
+
+    <Table
+        id="productsTable"
+        class="sapUiLargeMarginTop"
+        inset="false"
+        mode="{= ${viewState>/mode} === 'Edit' ? 'MultiSelect' : 'None' }"
+    >
+        <headerToolbar>
+            <OverflowToolbar>
+                <content>
+                    <Title id="productsTableTitle" text="{i18n>product.tableTitle}" level="H2"/>
+                    <ToolbarSpacer />
+                    <Button
+                        tooltip="{i18n>button.create}"
+                        icon="sap-icon://add"
+                        press="_onBtnPressProductCreate"
+                        visible="{= ${viewState>/mode} === 'Edit' }"/>
+                    <Button
+                        tooltip="{i18n>button.delete}"
+                        icon="sap-icon://delete"
+                        press="_onBtnPressProductDelete"
+                        visible="{= ${viewState>/mode} === 'Edit' }"/>
+                </content>
+            </OverflowToolbar>
+        </headerToolbar>
+        <columns>
+            <Column minScreenWidth="Tablet" demandPopin="true">
+                <Text text="{i18n>column.productName}"/>
+            </Column>
+            <Column minScreenWidth="Tablet" demandPopin="true">
+                <Text text="{i18n>column.quantity}"/>
+            </Column>
+            <Column minScreenWidth="Tablet" demandPopin="true">
+                <Text text="{i18n>column.pricePerQuantity}"/>
+            </Column>
+            <Column minScreenWidth="Tablet" demandPopin="true">
+                <Text text="{i18n>column.totalPrice}"/>
+            </Column>
+        </columns>
+
+        <items>
+            <ColumnListItem vAlign="Middle">
+                <cells>
+                    <ObjectIdentifier title="{Product/ProductID} - {Product/ProductName}"/>
+                    <Text text="{Quantity}" />
+                    <Text text="{Product/UnitPrice}" />
+                    <Text text="{parts: ['Quantity', 'Product/UnitPrice'], formatter: '.formatter.formatTotalPrice'}" />
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+
+</core:FragmentDefinition>

@@ -1,0 +1,63 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
+
+    <f:SimpleForm id="orderEditSimpleForm"
+        editable="true"
+        layout="ResponsiveGridLayout"
+        title="{i18n>order.formTitle}"
+        labelSpanXL="4"
+        labelSpanL="4"
+        labelSpanM="4"
+        labelSpanS="12"
+        adjustLabelSpan="false"
+        emptySpanXL="5"
+        emptySpanL="5"
+        emptySpanM="5"
+        emptySpanS="0"
+        columnsXL="1"
+        columnsL="1"
+        columnsM="1"
+        singleContainerFullSize="true" 
+        visible="{= ${viewState>/mode} === 'Edit' }">
+        <f:content>
+            <Label text="{i18n>order.number}" labelFor="inpOrderNum" />
+            <Input id="inpOrderNum" 
+                value="{OrderNum}" 
+                editable="false"
+            />
+
+            <Label text="{i18n>order.createdOn}" />
+
+            <Input id="inpCreatedOn" 
+                value="{
+                    path: 'CreateDat',
+                    formatter: '.formatter.formatDate'
+                }" 
+                editable="false"
+            />
+
+            <Label text="{i18n>order.receivingPlant}" required="true" />
+            <Input id="inpReceivingPlant" 
+                value="{RecPlantID} - {RecPlantDesc}" 
+                editable="false"
+            />
+
+            <Label text="{i18n>order.deliveringPlant}" required="true" />
+            <Input id="inpDeliveringPlant" 
+                value="{DelPlantID} - {DelPlantDesc}" 
+                editable="false"
+            />
+
+            <Label text="{i18n>order.status}" />
+            <Select id="selectStatus"
+                items="{path: 'statusModel>/statusOptions', templateShareable: false}"
+                selectedKey="{Status}">
+                <core:Item key="{statusModel>key}" text="{statusModel>text}" />
+            </Select>
+        </f:content>
+    </f:SimpleForm>
+
+</core:FragmentDefinition>
