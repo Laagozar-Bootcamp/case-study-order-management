@@ -1,13 +1,13 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
+    "ordermanagement/controller/BaseController",
     "sap/m/MessageToast",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
     "ordermanagement/model/formatter"
-], (Controller, MessageToast, Filter, FilterOperator, formatter) => {
+], (BaseController, MessageToast, Filter, FilterOperator, formatter) => {
     "use strict";
 
-    return Controller.extend("ordermanagement.controller.Main", { formatter: formatter,
+    return BaseController.extend("ordermanagement.controller.Main", { formatter: formatter,
         onInit() {
             
         },
