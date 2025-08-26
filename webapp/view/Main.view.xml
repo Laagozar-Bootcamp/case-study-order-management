@@ -42,7 +42,11 @@
             </filterbar:filterGroupItems>
         </filterbar:FilterBar>
         </content>
-        <Table id="tabOrderList" mode="MultiSelect" items="{ path: '/Orders', sorter: { path: 'OrderNum' } }"  >
+        <Table 
+            id="tabOrderList" 
+            mode="MultiSelect" 
+            items="{ path: '/Orders', 
+                     sorter: [{ path: 'OrderNum', descending: false }] }">
         <headerToolbar>
             <Toolbar id="tbOrderTab">
                 <Text id="txtTbOrder" text="{i18n>order}"/>
