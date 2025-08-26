@@ -1,13 +1,13 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
+    "ordermanagement/controller/BaseController",
     "sap/m/MessageToast"],
     /**
-     * @param {typeof sap.ui.core.mvc.Controller} Controller
+     * @param {typeof sap.ui.core.mvc.Controller} BaseController
      */
-    function (Controller, MessageToast) {
+    function (BaseController, MessageToast) {
         "use strict";
 
-        return Controller.extend("ordermanagement.controller.CreatePage", {
+        return BaseController.extend("ordermanagement.controller.CreatePage", {
             onInit: function () {
             }
         });
