@@ -4,7 +4,7 @@
         "RecPlantDesc": "Manila",
         "DelPlantDesc": "Laoag",
         "Status": "Created",
-        "OrderNum": "448165114",
+        "OrderNum": "29990",
         "RecPlantID": "QAML",
         "DelPlantID": "OYfI"
     },
@@ -13,7 +13,7 @@
         "RecPlantDesc": "Quezon City",
         "DelPlantDesc": "Legazpi",
         "Status": "Created",
-        "OrderNum": "936739825",
+        "OrderNum": "29901",
         "RecPlantID": "twfn",
         "DelPlantID": "HpjV"
     },
@@ -22,7 +22,7 @@
         "RecPlantDesc": "Caloocan",
         "DelPlantDesc": "Naga",
         "Status": "Created",
-        "OrderNum": "873486142",
+        "OrderNum": "28892",
         "RecPlantID": "IbgM",
         "DelPlantID": "Rtvg"
     },
@@ -31,7 +31,7 @@
         "RecPlantDesc": "Pasay",
         "DelPlantDesc": "Lucena",
         "Status": "Released",
-        "OrderNum": "1036544421",
+        "OrderNum": "20203",
         "RecPlantID": "YbHd",
         "DelPlantID": "bFLZ"
     },
@@ -40,7 +40,7 @@
         "RecPlantDesc": "Makati",
         "DelPlantDesc": "Lipa",
         "Status": "Released",
-        "OrderNum": "1410289058",
+        "OrderNum": "30004",
         "RecPlantID": "Jtwc",
         "DelPlantID": "Uymz"
     },
@@ -49,7 +49,7 @@
         "RecPlantDesc": "Taguig",
         "DelPlantDesc": "Olongapo",
         "Status": "Released",
-        "OrderNum": "1927955369",
+        "OrderNum": "10105",
         "RecPlantID": "LUxE",
         "DelPlantID": "RNLf"
     },
@@ -58,7 +58,7 @@
         "RecPlantDesc": "Pasig",
         "DelPlantDesc": "Ormoc",
         "Status": "Partially Completed",
-        "OrderNum": "947512095",
+        "OrderNum": "18006",
         "RecPlantID": "ZKdw",
         "DelPlantID": "mRiq"
     },
@@ -67,7 +67,7 @@
         "RecPlantDesc": "Marikina",
         "DelPlantDesc": "Roxas",
         "Status": "Partially Completed",
-        "OrderNum": "94578469",
+        "OrderNum": "10057",
         "RecPlantID": "Zxtu",
         "DelPlantID": "LWwO"
     },
@@ -76,7 +76,7 @@
         "RecPlantDesc": "Valenzuela",
         "DelPlantDesc": "Bacolod",
         "Status": "Partially Completed",
-        "OrderNum": "1631240998",
+        "OrderNum": "10048",
         "RecPlantID": "UJoa",
         "DelPlantID": "LGBW"
     },
@@ -85,7 +85,7 @@
         "RecPlantDesc": "Malabon",
         "DelPlantDesc": "Dipolog",
         "Status": "Delivered",
-        "OrderNum": "1988236780",
+        "OrderNum": "10039",
         "RecPlantID": "mUAY",
         "DelPlantID": "IBRf"
     },
@@ -94,7 +94,7 @@
         "RecPlantDesc": "Muntinlupa",
         "DelPlantDesc": "Butuan",
         "Status": "Delivered",
-        "OrderNum": "978342476",
+        "OrderNum": "10020",
         "RecPlantID": "yKLI",
         "DelPlantID": "NMvd"
     },
@@ -103,7 +103,7 @@
         "RecPlantDesc": "San Juan",
         "DelPlantDesc": "Tagum",
         "Status": "Delivered",
-        "OrderNum": "1015820333",
+        "OrderNum": "10010",
         "RecPlantID": "PPTO",
         "DelPlantID": "ZDtR"
     }
