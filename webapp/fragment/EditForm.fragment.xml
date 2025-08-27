@@ -20,7 +20,8 @@
         columnsXL="1"
         columnsL="1"
         columnsM="1"
-        singleContainerFullSize="true" >
+        singleContainerFullSize="true" 
+        visible="{= ${viewState>/mode} === 'Edit' }">
         <f:content>
             <Label text="{i18n>order.number}" labelFor="inpOrderNum" />
             <Input id="inpOrderNum" 
@@ -52,8 +53,11 @@
 
             <Label text="{i18n>order.status}" />
             <Select id="selectStatus"
-                items="{path: 'statusModel>/statusOptions', templateShareable: false}"
-                selectedKey="{Status}">
+                items="{
+                    path: 'statusModel>/statusOptions', 
+                    templateShareable: false
+                }"
+                selectedKey="{statusModel>/selectedStatus}">
                 <core:Item key="{statusModel>key}" text="{statusModel>text}" />
             </Select>
         </f:content>
