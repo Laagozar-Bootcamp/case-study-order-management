@@ -44,7 +44,9 @@ sap.ui.define([
             });
 
             let oCombinedFilter = null;
-            oCombinedFilter = new Filter(aFilters, false);
+            if (aFilters.length > 0){
+                oCombinedFilter = new Filter(aFilters, false);
+            }
 
             const oTable = this.byId("tabOrderList");
             const oBinding = oTable.getBinding("items");
