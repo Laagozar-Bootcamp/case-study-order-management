@@ -2,7 +2,85 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:filterbar="sap.ui.comp.filterbar"
-    xmlns:core="sap.ui.core">
-    <Page id="pageCreate" title="{i18n>title}" >
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout">
+    <Page id="pageCreate" title="Order Creation" floatingFooter="true">
+        <content>
+        <sap.ui.layout.form:SimpleForm
+        editable="true"
+        layout="ResponsiveGridLayout"
+        xmlns:sap.ui.layout.form="sap.ui.layout.form"
+        id="form0">
+ 
+            <sap.ui.layout.form:content>
+                <core:Title text="Order Detail" id="title0"/>
+                <Label text="Receiving Plant" id="label0"/>
+                <Input width="25%"
+                          id="inputReceivingPlant"
+               showValueHelp="true"
+            valueHelpRequest="onRecPlantRequest"/>
+           
+                <Label text="Delivering Plant" id="label1"/>
+                <Input width="25%"
+                          id="inputDelPlant"
+                          value =""
+               showValueHelp="true"
+            valueHelpRequest="onDelPlantRequest"/>
+            </sap.ui.layout.form:content>
+        </sap.ui.layout.form:SimpleForm>
+    </content>
+ 
+   
+    <Table id="tabCreateList" mode="MultiSelect" items="{ path: '/OrderItems' }">
+        <headerToolbar>
+            <Toolbar id="tbCreateTab">
+                <Text id="txtBOrder" text="Order Details"/>
+                <ToolbarSpacer id="tbSpacers"/>
+                <Button id="butItemAdd" icon="sap-icon://add" tooltip="Add Item" press="onPressAddItem"/>
+                <Button id="butItemDelete" icon="sap-icon://delete" tooltip="Remove Item" press="onPressDeleteItem"/>
+            </Toolbar>
+        </headerToolbar>
+ 
+        <columns>
+            <Column id="colmOrderNum">
+                <Text id="txtOrderNums" text="Product Name"/>
+            </Column>
+            <Column id="colmCreateDat">
+                <Text id="txtCreateDats" text="Quantity"/>
+            </Column>
+            <Column id="colmRecPlant">
+                <Text id="txtRecPlants" text="Price per Quantity"/>
+            </Column>
+            <Column id="colmDelPlant">
+                <Text id="txtDelPlants" text="Total Price"/>
+            </Column>
+           <!--
+            <Column id="colmStatus">
+                <Text id="txtStatuss" text="{i18n>status}"/>
+            </Column>
+            -->
+        </columns>
+ 
+        <items>
+            <ColumnListItem id="listCreate" vAlign="Middle" type="Navigation" press="onPressOrder">
+                <cells>
+                    <Text id="celOrderNum" text="{ProductName}"/>
+             <!--       <Text id="celCreateDat" text="{path: 'CreateDat', formatter: '.formatter.formatDate'}"/>-->
+                    <Text id="celRecPlant" text="{Quantity}"/>
+                    <Text id="celDelPlant" text="{UnitPrice}"/>
+                    <Text id="celStatus" text= "{= ${Quantity} * ${UnitPrice} }"
+                          textAlign="End" wrapping="false"/>
+                </cells>
+            </ColumnListItem>
+        </items>
+        </Table>
+ 
+ <footer>
+            <OverflowToolbar id="idOFTFooter">
+                    <ToolbarSpacer id="idTSpacerFooter"/>
+                    <Button id="idBtnSave" text="Save" tooltip="Save" press="onPressCreatOrder"/>
+                    <Button id="idBtnCancel" text="Cancel" tooltip="Cancel" press="onPressCancelOrder"/>
+                </OverflowToolbar>
+            </footer>
     </Page>
 </mvc:View>

@@ -1,0 +1,14 @@
+<core:FragmentDefinition
+xmlns="sap.m"
+xmlns:core="sap.ui.core">
+ 
+<Dialog id="idDelDialogs" title="{i18n>delConfirm}">
+    <Text id="txtDelDialogs" text="Are you sure you want to Delete Selected Item's" class="sapUiSmallMarginBegin"/>
+    <beginButton>  
+        <Button id="butCancels" text="{i18n>cancel}" press="onPressCancel"/>
+    </beginButton>
+    <endButton>
+        <Button id="butConfs" text="{i18n>confirm}" type="Accept" press="onPressConfirm"/>
+    </endButton>
+</Dialog>
+</core:FragmentDefinition>
