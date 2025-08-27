@@ -80,7 +80,7 @@
                     <Text id="colCreateDat" text="{path: 'CreateDat', formatter: '.formatter.formatDate'}"/>
                     <Text id="colRecPlant" text="{RecPlantID} - {RecPlantDesc}"/>
                     <Text id="colDelPlant" text="{DelPlantID} - {DelPlantDesc}"/>
-                    <Text id="colStatus" text="{Status}"/>
+                    <ObjectStatus text="{Status}" state="{path: 'Status', formatter: '.formatter.statusColor'}"/>
                 </cells>
             </ColumnListItem>
         </items>
