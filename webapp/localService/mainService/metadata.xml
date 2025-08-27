@@ -53,6 +53,8 @@
                 </Property>
                 <Property Name="UnitPrice" Type="Edm.Decimal" Nullable="false" Precision="10" Scale="2" sap:label="Price">
                 </Property>
+                <Property Name="Quantity" Type="Edm.Int16" Nullable="false" sap:label="Quantity">
+                </Property>
                 <Property Name="DelPlantID" Type="Edm.String" MaxLength="4" sap:label="Delivering Plant ID">
                 </Property>
                 <NavigationProperty Name="OrderItem" Relationship="ProjectModel.OrderItem_Products" FromRole="Product" ToRole="OrderItem" />

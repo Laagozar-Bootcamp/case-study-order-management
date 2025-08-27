@@ -18,14 +18,26 @@ sap.ui.define([
                 },
                 
             _onObjectMatched: function (oEvent) {
-                const oParam = oEvent.getParameter(Constants.PARAM.Arguments);
+                const oParam = oEvent.getParameter(Constants.PARAM.Arguments),                
+                     oTable  = this.byId("tabDtlProductList");
 
                 // Bind the view to the specific order data
                 if(oParam){
                     this.bindViewToEntity(this.getView(), Constants.ENTITY.Orders, oParam.OrderNum);
                 }
-            },
-
+                
+            // Bind the table to the order items
+                if(oTable){
+                    this.bindTable(
+                        oTable, 
+                        Constants.ENTITY.Orders, 
+                        oParam.OrderNum, 
+                        this.setTableTemplate(Constants.TABLE.Product),
+                        Constants.ENTITY.OrderItem
+                    );
+                }
+                },
+            
             //Add Route Navigation function when user click the Cancel button
             onPressDetailCancel: function() {
                 var oHistory = History.getInstance();
