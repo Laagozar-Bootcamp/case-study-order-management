@@ -24,14 +24,7 @@ sap.ui.define([
                 if(oParam){
                     this.bindViewToEntity(this.getView(), Constants.ENTITY.Orders, oParam.OrderNum);
                 }
-
-                // var sOrderNumber = oEvent.getParameter("arguments").idOrderNo;      
-
-                // var sPath = "/Orders(" + sOrderNumber + ")";
-                // this.getView().bindElement({
-                //     path: sPath
-                //     })
-                },
+            },
 
             //Add Route Navigation function when user click the Cancel button
             onPressDetailCancel: function() {
