@@ -51,7 +51,8 @@ sap.ui.define([
             //oBinding.filter(aFilters);
             oBinding.filter(oCombinedFilter);
         },
-
+        
+        //Add on Clear filter function
         onClear: function (oEvent){
             let oTable    = this.byId("tabOrderList");
             let aControls = oEvent.getParameter(Constants.PARAM.SelectionSet);
