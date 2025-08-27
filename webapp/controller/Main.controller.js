@@ -21,7 +21,7 @@ sap.ui.define([
 
             //apply filters
             const aFilters = [];
-            if (oOrderNum){
+            if (oOrderNum && oOrderNum !== ''){
                 aFilters.push(new Filter("OrderNum", FilterOperator.Contains, oOrderNum));
             }
             
@@ -50,6 +50,28 @@ sap.ui.define([
             const oBinding = oTable.getBinding("items");
             //oBinding.filter(aFilters);
             oBinding.filter(oCombinedFilter);
+        },
+
+        onClear: function (oEvent){
+            let oTable    = this.byId("tabOrderList");
+            let aControls = oEvent.getParameter(Constants.PARAM.SelectionSet);
+			let	oBinding  = oTable.getBinding("items");
+
+            aControls.forEach( control => {
+                let sId = control.getId();
+
+                if (sId.includes(Constants.CONTROLS.InpOrderNumber)){
+                    control.setValue(Constants.EMPTY);
+
+                //}else if (insert date filter here){}
+                
+                }else if (sId.includes(Constants.CONTROLS.MultiSelectStatus)){
+                    control.setSelectedKeys([]);
+                }
+            });
+
+			// Apply filter settings
+			oBinding.filter([]);
         },
         /* 
         Keeping this part for now:

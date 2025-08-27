@@ -11,7 +11,8 @@
             showClearOnFB="true" 
             showFilterConfiguration="false" 
             persistencyKey="OrdersFilters" 
-            search="onSearch">
+            search="onSearch"
+            clear="onClear">
             <filterbar:filterGroupItems>
 
                 <filterbar:FilterGroupItem 
