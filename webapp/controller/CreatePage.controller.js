@@ -14,7 +14,7 @@ sap.ui.define([
             onInit: function () {
             },
 
-             onRecPlantRequest: function(oEvent) {
+              onRecPlantRequest: function(oEvent) {
                 var oView = this.getView();
                 this._valueHelpSource = oEvent.getSource();
  
@@ -35,45 +35,6 @@ sap.ui.define([
                 }
                 this._oRecPlantHelp.open();
                
-                //var oModel = this.getOwnerComponent().getModel("RecPlantData");
- 
-                //if (!this._oValueHelpDialog) {
-                 //   this._oValueHelpDialog = new sap.m.Dialog({
-                  //      title: "Receiving Plant",
-                 //       resizable: true,
-                 //       draggable: true,
-                 //       content: [
-                  //          new sap.m.List({
-                   //             mode: "SingleSelectMaster",
-                    //            items:{
-                    //                path: "RecPlantData>/plants",
-                      //              template: new sap.m.StandardListItem({
-                       //                 title: "{RecPlantData>RecPlantID}",
-                       //                 description: "{RecPlantData>RecPlantDesc}"
-                       //             })
-                        //        },
-                        //        // listItem
-                        //        itemPress: function (oEvt) {
-                        //            var oSelected = oEvt.getParameter("selectedItem").getBindingContext().getObject();
-                        //            this._valueHelpSource.setValue(oSelected.getTitle);
-                        //            this._oValueHelpDialog.close();
-                        //        }.bind(this)
-                      //      })
-                      //  ],
-                    //    beginButton: new sap.m.Button({
-                    //        text: "Cancel",
-                    //        press: function () {
-                    //            this._oValueHelpDialog.close();
-                    //       }.bind(this)
-                    //    }),
-                  //  });
- 
-                //    this._oValueHelpDialog.setModel(oModel);
-                 //   oView.addDependent(this._oValueHelpDialog);
-                //}
- 
-              //  this._valueHelpSource = oEvent.getSource();
-               // this._oValueHelpDialog.open();
             },
  
             //Value Help for Delivering Plant
@@ -172,33 +133,7 @@ sap.ui.define([
                 this.oDialog.then(function(oDialog) {
                     oDialog.open();
                 });
- 
-               // sap.m.MessageBox.confirm(
-                 //   "Are you sure you want to Delete Selected Item's?",
-                 //   {
-                  //      title: "Confirm Deletion",
-                   //     actions: [sap.m.MessageBox.Action.YES,
-                  //                sap.m.MessageBox.Action.NO],
-                    //    emphasizedAction: sap.m.MessageBox.YES,
-                     //   onClose: function (oAction) {
-                    //        if (oAction === sap.m.MessageBox.YES){
-                     //           sap.m.MessageToast.show("Item Successfully Deleted");
-                     //       } else{
-                     //           sap.m.MessageToast.show("Action cancelled");
-                     //       }
-                      //      }
-                     //   }
-               // );
- 
-               // if(!this.oDialog){
-                 //   this.oDialog = this.loadFragment({
-               //         name: "ordermanagement.fragment.DeleteDialog"
-                //   });
-               // }
- 
-              //  this.oDialog.then(function(oDialog) {
                     oDialog.open();
-              //  });
             }
         },
  
@@ -229,37 +164,37 @@ sap.ui.define([
  
             //Footer Button
             onPressCancelOrder: function(){
-            var oTabitems = this.byId("tabCreateList");
+            var oTabitems0 = this.byId("tabCreateList");
             const oRouter0 = this.getOwnerComponent().getRouter();
-             if(oTabitems.getItems().length > 1){
- 
+             if(oTabitems0.getItems().length > 1){
+                //Put Message Here
              }
+ 
             //insert create route here
             oRouter0.navTo("RouteMain");
         },
             onPressCreatOrder: function(){
             var oRouter1 = this.getOwnerComponent().getRouter();
             var oTabitems = this.byId("tabCreateList");
-            var icount = oTabitems.getItems().length;
-           
-            var oModels = this.getView().getModel("myModel");
-            var spath = "/Orders";
-            var aProducts = oModels.getProperty(spath);
+               
+            // var oModels = this.getView().getModel();
+            // var spath = "/Orders";
+            // var aProducts = oModels.getProperty(spath);
             // const aItems = oModels.getData();
  
             // const oToday = new Date();
             // const oDateFormat = sap.ui.core.format.DateFormat.getDateInstance({pattern : "yyy-MM-dd"});
             // const sDate = oDateFormatt.format(oToday);
  
-             var oNewItem = {
-                CreateDat: sDate,
-                RecPlantDesc: "RecPlantDesc1",
-                DelPlantDesc: "DelPlantDesc1",
-                      Status: "Created",
-                    OrderNum: Math.floor(Math.random() * 100000000),
-                  RecPlantID: "QAML",
-                 DelPlantID : "OYfI"
-              };
+            //  var oNewItem = {
+            //     CreateDat: sDate,
+            //     RecPlantDesc: "RecPlantDesc1",
+            //     DelPlantDesc: "DelPlantDesc1",
+            //           Status: "Created",
+            //         OrderNum: Math.floor(Math.random() * 100000000),
+            //       RecPlantID: "QAML",
+            //      DelPlantID : "OYfI"
+            //   };
  
             // aProducts.push(oNewItem);
  
