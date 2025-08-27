@@ -2,9 +2,10 @@ sap.ui.define([
     "ordermanagement/controller/BaseController",
     "ordermanagement/utils/Constants",
     "sap/m/MessageToast",
+    "sap/m/MessageBox",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator"
-], (BaseController, Constants, MessageToast, Filter, FilterOperator) => {
+], (BaseController, Constants, MessageToast, Filter, FilterOperator, MessageBox) => {
     "use strict";
 
     return BaseController.extend("ordermanagement.controller.Main", { 
@@ -132,7 +133,13 @@ sap.ui.define([
             var oSelectedContext = oEvent.getParameter("rowContext");
 
             if(aTabOrdsPaths.length > 1){
-                MessageToast.show("Please select only one item from the table");
+                sap.m.MessageBox.alert("Please select only one item from the table", {
+                    title: "Information Notice",                         // default
+                    onClose: null,                                       // default
+                    styleClass: "",                                      // default
+                    initialFocus: null,                                  // default
+                    textDirection: sap.ui.core.TextDirection.Inherit     // default
+                });
             }else {      
                 const oItem           = oEvent.getSource(),
                       oBindingContext = oItem.getBindingContext(),
