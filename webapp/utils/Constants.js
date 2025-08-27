@@ -10,16 +10,16 @@ sap.ui.define([], () => {
                 "Name" : "RouteMain"
             },
             "Create" : {
-                "View" : "CreatePage",
-                "Name" : "RouteCreatePage"
+                "View" : "Create",
+                "Name" : "RouteCreate"
             },
             "Details" : {
-                "View" : "DetailPage",
-                "Name" : "RouteDetailPage"
+                "View" : "Details",
+                "Name" : "RouteDetails"
             },
             "Edit" : {
-                "View" : "EditPage",
-                "Name" : "RouteEditPage"
+                "View" : "Edit",
+                "Name" : "RouteEdit"
             },
         },
         CONTROLS : {
@@ -35,18 +35,20 @@ sap.ui.define([], () => {
         MODEL : {
             "Status"    : "statusModel",
             "i18n"      : "i18n",
-            "ViewState" : "viewState"
+            "ViewState" : "viewState",
+            "Local"     : "local"
         },
         PARAM : {
-            "SelectionSet"  : "selectionSet",
-            "Items"         : "items",
-            "Name"          : "name",
-            "Arguments"     : "arguments",
-            "Total"         : "total",
-            "Value"         : "value",
-            "Selected"      : "selected",
-            "ListItem"      : "listItem",
-            "SelectedItems" : "selectedItems"
+            "SelectionSet"     : "selectionSet",
+            "Items"            : "items",
+            "Name"             : "name",
+            "Arguments"        : "arguments",
+            "Total"            : "total",
+            "Value"            : "value",
+            "Selected"         : "selected",
+            "ListItem"         : "listItem",
+            "SelectedItems"    : "selectedItems",
+            "SelectedContexts" : "selectedContexts"
         },
         DATE_FORMAT : {
             "Pattern01" : "yyyy-MM-dd",
@@ -68,7 +70,9 @@ sap.ui.define([], () => {
             "OrderNum"    : "OrderNum",
             "ProductID"   : "ProductID",
             "ProductName" : "ProductName",
-            "DelPlantID"  : "DelPlantID"
+            "DelPlantID"  : "DelPlantID",
+            "Status"      : "Status",
+            "Quantity"    : "Quantity"
         },
         FILTER_FIELD : {
             "OrderNum"  : "OrderNum",
@@ -76,7 +80,8 @@ sap.ui.define([], () => {
             "Status"    : "Status"
         },
         PROPERTY : {
-            "Mode"     : "/mode",
+            "Mode"           : "/mode",
+            "SelectedStatus" : "/selectedStatus"
         },
         ENTITY : {
             "Orders"    : "Orders",
@@ -93,6 +98,9 @@ sap.ui.define([], () => {
         },
         FRAGMENT : {
             "ProductDialog" : "ordermanagement.fragment.ProductDialog"
+        },
+        BATCH_ID : {
+            "OrderChanges" : "OrderChanges"
         }
     };
 

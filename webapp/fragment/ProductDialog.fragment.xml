@@ -28,7 +28,7 @@
 				<cells>
 					<ObjectIdentifier title="{ProductID} - {ProductName}"/>
 					<Text text="{UnitPrice}" />
-					<Input type="Number" enabled="false" />
+					<StepInput min="1" max="50" width="4rem" value="{SelectedQuantity}"/>
 				</cells>
 			</ColumnListItem>
 		</items>

@@ -22,7 +22,7 @@ sap.ui.define([
         /**
          * Returns the named default model attached to the view.
          * @public
-         * @param {string} [sName] Optional name of the model.
+         * @param {String} [sName] Optional name of the model.
          * @returns {sap.ui.model.Model} The default model instance.
          */
         getModel: function(sName){
@@ -32,7 +32,7 @@ sap.ui.define([
          * Returns a named model attached to the component (global scope).
          * Useful for accessing shared models like i18n or device.
          * @public
-         * @param {string} [sName] Optional name of the component model.
+         * @param {String} [sName] Optional name of the component model.
          * @returns {sap.ui.model.Model} The named component model instance.
          */
         getComponentModel: function(sName){
@@ -42,7 +42,7 @@ sap.ui.define([
          * Sets a model to the view.
          * @public
          * @param {sap.ui.model.Model} [oModel] The model instance to set.
-         * @param {string} [sName] Optional name for the model.
+         * @param {String} [sName] Optional name for the model.
          * @returns {sap.ui.core.mvc.View} The view instance for chaining.
          */
         setModel: function(oModel, sName){
@@ -51,8 +51,9 @@ sap.ui.define([
         /**
          * Initializes and sets the Status model
          * @public
+         * @param {String} [sSelectedStatus] Default selected status from OData Model
          */
-        initStatusModel: function(){
+        initStatusModel: function(sSelectedStatus){
             // Create status JSONModel
             const oStatusModel = new JSONModel({
                 statusOptions:[
@@ -60,7 +61,8 @@ sap.ui.define([
                     { key: Constants.STATUS.Released, text: Constants.STATUS.Released },
                     { key: Constants.STATUS.PartiallyCompleted, text: Constants.STATUS.PartiallyCompleted },
                     { key: Constants.STATUS.Delivered, text: Constants.STATUS.Delivered }
-                ]
+                ],
+                selectedStatus: sSelectedStatus
             });
 
             // Set status model
@@ -233,9 +235,11 @@ sap.ui.define([
                             new sap.m.Text({
                                 text: "{UnitPrice}"
                             }),
-                            new sap.m.Input({
-                                type   : "Number",
-                                enabled: false
+                            new sap.m.StepInput({
+                                min: 1,
+                                max: 50,
+                                width: "4rem",
+                                value: "{SelectedQuantity}"
                             })
                         ]
                     });
@@ -250,7 +254,11 @@ sap.ui.define([
          * @returns {String} The return value.
          */
         getBindingContextValue: function(sProperty){
-            return this.getView().getBindingContext().getProperty(sProperty);
+            const oContext = this.getView().getBindingContext();
+            
+            if(oContext){
+                return oContext.getProperty(sProperty);
+            }
         },
         /**
          * Convenience method for closing dialog

@@ -6,7 +6,7 @@
 
     <Table
         id="productsTable"
-        class="sapUiLargeMarginTop"
+        class="sapUiMediumMarginTopBottom"
         inset="false"
         mode="MultiSelect"
     >

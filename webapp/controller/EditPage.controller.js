@@ -12,13 +12,12 @@ sap.ui.define([
     "use strict";
 
     return BaseController.extend("ordermanagement.controller.EditPage", {
+        /**
+         * Called once after the controller is instantiated.
+         * @public
+         */
         onInit() {
-            this._mSelectedItems = {};
-            
             this.getComponentRouter().getRoute(Constants.ROUTE.Edit.Name).attachPatternMatched(this._onPatternMatched, this);
-
-            // Initialize Status model
-            this.initStatusModel();
 
             // Update the Table's title
             this.updateTableTitle(Constants.CONTROLS.ProductsTable, Constants.CONTROLS.ProductsTableTitle, this.getText("product.tableTitle"));
@@ -41,6 +40,9 @@ sap.ui.define([
             // Bind the view to the specific order data
             if(oParam){
                 this.bindViewToEntity(this.getView(), Constants.ENTITY.Orders, oParam.OrderNum);
+
+                // Initialize Status model
+                this.initStatusModel(this.getBindingContextValue(Constants.FIELD.Status));
             }
 
             // Bind the table to the order items
@@ -106,13 +108,6 @@ sap.ui.define([
             
 			// Set custom text for the confirmation button
 			oDialog.setConfirmButtonText(this.getText("button.add"));
-
-            // Reset Quantity value
-            const aInputs = oDialog.findElements(true).filter(ctrl => 
-                ctrl.isA("sap.m.Input")
-            );
-                
-            aInputs.forEach(input => input.setValue(""));
         },
         /**
          * Performs search on product
@@ -137,37 +132,43 @@ sap.ui.define([
 			oBinding.filter(aFilters);
         },
         /**
-         * Sets and validates control attribute and value when item is selection is changed.
-         * @public
-         * @param {sap.ui.base.Event} [oEvent] Event handler
-         */
-        _onSelectionChange: function(oEvent){
-            let oItem     = oEvent.getParameter(Constants.PARAM.ListItem),
-                bSelected = oEvent.getParameter(Constants.PARAM.Selected);
-
-            let aCells = oItem.getCells();
-            aCells.forEach(cell => {
-                if(cell.isA("sap.m.Input")){
-                    cell.setValue(1);
-                    cell.setEnabled(bSelected);
-
-                    if (!bSelected){
-                        cell.setValue("");
-                    }
-                }
-            });
-        },
-        /**
          * Performs add of product to the table list.
          * @public
          * @param {sap.ui.base.Event} [oEvent] Event handler
          */
         _onAddProduct: function(oEvent){
+            const _this = this;
+
+            const oModel = this.getModel(),
+                  sPath  = this.getView().getBindingContext().getPath();
+
             let aSelectedItems = oEvent.getParameter(Constants.PARAM.SelectedItems);
 
             if (aSelectedItems.length === 0){
                 MessageBox.information(this.getText("info.noItemSelected"));
+                return;
             }
+
+            aSelectedItems.forEach(function (oItem){
+                const oContext = oItem.getBindingContext();
+
+                const sProductAddedMsg = _this.getText("info.productAdded", oContext.getObject().ProductID);
+                
+                let oStepInput = oItem.getCells()[2],
+                    iQty       = oStepInput.getValue() || 1;
+
+                let oNewItem = {
+                    OrderNum: oContext.getObject().OrderNum,
+                    ProductID: oContext.getObject().ProductID,
+                    Quantity: iQty
+                };
+
+                oModel.create(sPath + `/${Constants.ENTITY.OrderItem}`, oNewItem, {
+                    success: function(){
+                        sap.m.MessageToast.show(sProductAddedMsg);
+                    }
+                });
+            });
         },
         /**
          * Performs delete to the dataset of the selected items in table.
@@ -176,10 +177,9 @@ sap.ui.define([
          * @public
          */
         _onBtnPressProductDelete: function(){
-            const _this = this;
-
             let oTable         = this.byId(Constants.CONTROLS.ProductsTable),
-                aSelectedItems = oTable.getSelectedItems();
+                aSelectedItems = oTable.getSelectedContexts(),
+                oModel         = this.getModel();
 
             if (aSelectedItems.length === 0){
                 MessageBox.error(this.getText("error.noSelection"));
@@ -192,18 +192,10 @@ sap.ui.define([
                 actions: [MessageBox.Action.YES, MessageBox.Action.NO],
                 onClose: function (sAction){
                     if (sAction === MessageBox.Action.YES){
-                        // Initialize deleted paths array if not yet
-                        _this.aDeletedPaths = _this.aDeletedPaths || [];
-                        
                         // Remove selected items from UI only
                         aSelectedItems.forEach(function (oItem){
-                            let sPath = oItem.getBindingContext().getPath();
-
-                            _this.aDeletedPaths.push(sPath); // Store for later deletion
-
-                            oTable.removeItem(oItem);
+                            oModel.remove(oItem.getPath());
                         });
-
                     }
                 }.bind(this)
             });
@@ -215,14 +207,38 @@ sap.ui.define([
          * @public
          */
         onBtnPressOrderSave: function(){
-            const oModel    = this.getModel(),
-                  sOrderNum = this.getBindingContextValue(Constants.FIELD.OrderNum);
+            const _this = this;
+
+            const oModel      = this.getModel(),
+                  sOrderNum   = this.getBindingContextValue(Constants.FIELD.OrderNum),
+                  sPath       = this.getView().getBindingContext().getPath();
             
-            const sConfirmMsg       = this.getText("confirm.saveChanges", sOrderNum),
-                  sSuccessDeleteMsg = this.getText("info.orderUpdated");
+            const sConfirmMsg       = this.getText("confirm.saveChanges"),
+                  sSuccessUpdateMsg = this.getText("info.orderUpdated", sOrderNum);
+
+            // Get selected status from statusModel
+            let sStatus = this.getModel(Constants.MODEL.Status).getProperty(Constants.PROPERTY.SelectedStatus);
 
             // Commit changes
-            
+            MessageBox.confirm(sConfirmMsg, {
+                actions: [MessageBox.Action.YES, MessageBox.Action.NO],
+                onClose: function (sAction){
+                    if (sAction === MessageBox.Action.YES){
+                        // Update Status from statusModel
+                        oModel.update(sPath, { Status: sStatus }, {
+                            success: function(){
+                                MessageBox.information(sSuccessUpdateMsg,{
+                                    onClose: function(){
+                                        oModel.refresh(true);
+
+                                        _this.navigateToMain(Constants.ROUTE.Main.Name);
+                                    }.bind(this)
+                                });
+                            }.bind(this)
+                        });
+                    }
+                }
+            });
         },
         /**
          * Cancel the operation and go back to main page.
