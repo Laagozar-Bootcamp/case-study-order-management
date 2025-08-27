@@ -30,7 +30,8 @@ sap.ui.define([], () => {
             "ProductsTableTitle"    : "productsTableTitle",
             "InpOrderNumber"        : "inpOrderNumber",
             "DateRangeCreationDate" : "dateRangeCreationDate",
-            "MultiSelectStatus"     : "multiSelectStatus"
+            "MultiSelectStatus"     : "multiSelectStatus",
+            "DtlProductsTable"      : "tabDtlProductList",  
         },
         MODEL : {
             "Status"    : "statusModel",

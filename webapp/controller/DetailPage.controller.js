@@ -18,8 +18,8 @@ sap.ui.define([
                 },
                 
             _onObjectMatched: function (oEvent) {
-                const oParam = oEvent.getParameter(Constants.PARAM.Arguments),                
-                     oTable  = this.byId("tabDtlProductList");
+               const oParam = oEvent.getParameter(Constants.PARAM.Arguments),                
+                     oTable  = this.byId(Constants.CONTROLS.DtlProductsTable);
 
                 // Bind the view to the specific order data
                 if(oParam){
@@ -27,6 +27,8 @@ sap.ui.define([
                 }
                 
             // Bind the table to the order items
+            // Reuse of Table Template created for Edit Page - Products Table
+            // Invoked association binding between Product and Order Item to autofilter which Order Items will be displayed
                 if(oTable){
                     this.bindTable(
                         oTable, 
@@ -36,7 +38,7 @@ sap.ui.define([
                         Constants.ENTITY.OrderItem
                     );
                 }
-                },
+            },
             
             //Add Route Navigation function when user click the Cancel button
             onPressDetailCancel: function() {
