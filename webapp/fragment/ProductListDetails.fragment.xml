@@ -2,7 +2,7 @@
 xmlns:core="sap.ui.core"
 >
     <Panel id="paneProductList" class="sapUiResponsiveMargin" width="auto" >
-        <Table id="tabDtlProductList"  
+        <Table id="tabDtlProductList"  items="{ path: '/OrderProducts' }" 
                class="sapUiLargeMarginTop"
                inset="false"
                mode="SingleSelectMaster" >        
